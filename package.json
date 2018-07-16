@@ -1,0 +1,25 @@
+{
+  "name": "startime",
+  "version": "1.0.0",
+  "description": "startime template",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "keywords": [
+    "startime"
+  ],
+  "author": "Cyril Bazyliev",
+  "license": "ISC"
+}
