@@ -1,0 +1,2944 @@
+@import '_fonts.sass'
+@import '_vars.sass'
+body
+	font-family: $m-reg, 'sans-serif'
+	font-size: 24px
+	color: $black
+	margin: 0
+	background-color: $pale-grey
+.loader
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 20000
+html, body
+	height: 100%
+#cube-loader
+	background-color: $white
+	align-items: center
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	height: 100%
+	width: 100%
+	z-index: 100001
+	position: fixed
+	transition: 0.6s ease all
+	transform: translate3d(0,0,0)
+	justify-content: center
+	&.__close
+		transform: translate3d(0, 180vh, 0)
+		opacity: 0
+	&.caption 
+		margin: 0 auto
+	.cube-loader
+		width: 73px;
+		height: 73px;
+		margin: 0 auto;
+		margin-top: 49px;
+		position: relative;
+		transform: rotateZ(45deg)
+		.cube
+			position: relative
+			transform: rotateZ(45deg)
+			width: 50%
+			height: 50%
+			float: left
+			transform: scale(1.1)
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-color: rgba(52, 73, 94, 1.0)
+				animation: cube-loader 2.76s infinite linear both
+				transform-origin: 100% 100%
+			&.loader-2
+				transform: scale(1.1) rotateZ(90deg)
+				&:before
+					animation-delay: 0.35s
+			&.loader-3
+				transform: scale(1.1) rotateZ(180deg)
+				&:before
+					animation-delay: 0.69s
+			&.loader-4
+				transform: scale(1.1) rotateZ(270deg)
+				&:before
+					animation-delay: 1.04s
+@keyframes cube-loader 
+	0%, 10%
+		transform: perspective(136px) rotateX(-180deg)
+		opacity: 0
+	25%, 75%
+		transform: perspective(136px) rotateX(0deg)
+		opacity: 1
+	90%, 100%
+		transform: perspective(136px) rotateY(180deg)
+		opacity: 0
+.wrapper
+	max-width: 1920px
+	margin: 0 auto
+	position: relative
+	// padding-top: 170px
+	&.home
+		background-color: #0a101a
+.img-responsive
+	height: auto
+	max-width: 100%
+	display: block
+// HEADER STARTS
+header
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	width: 100%
+.header_bgi
+	position: absolute
+	top: 0
+	left: 0
+	z-index: -1
+.header_soc
+	position: fixed
+	left: -3vw
+	bottom: 165px
+	transform: rotate(-90deg)
+	z-index: 10
+.header_soc_list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	li
+		display: inline-block
+		padding: 0 50px 0 0
+		a
+			color: $white
+			letter-spacing: 2.3px
+			// text-transform: uppercase
+			position: relative
+			line-height: 1.64
+			font-size: 14px
+			font-family: $m-bold
+			display: block
+			transition: 0.4s ease all
+			&:before
+				content: ''
+				width: 16px
+				height: 3px
+				position: absolute
+				top: 50%
+				left: -25px
+				background-color: $white
+				transition: 0.3s ease all
+				transform: translateY(-50%)
+.header_main
+	max-width: 1200px
+	margin: 0 auto
+	margin-top: 31px
+	display: flex
+	position: relative
+	z-index: 1000
+.header_main_links
+	display: flex
+	margin-left: auto
+	position: relative
+	// overflow-x: hidden
+	// overflow-y: visible
+	z-index: 1001
+	>.__line
+		height: 150px
+		width: 4px!important
+		background-color: $warm-blue
+		position: absolute
+		bottom: 200px
+		left: 0
+		transition: 0.3s ease bottom, 0.3s ease transform
+		z-index: 1
+		&.test
+			bottom: 0
+			transform: translateX(3rem)
+.header_main_list
+	list-style-type: none
+	margin: 0
+	padding: 0
+	margin: auto
+	text-align: right
+	position: relative
+	z-index: 2
+	z-index: 1002
+	li
+		display: inline-block
+		transition: 0.4s ease all
+		a
+			padding: 20px 16px
+			font-size: 14px
+			display: block
+			font-family: $m-med
+			color: $white
+.header_menu
+	position: fixed
+	top: 58px
+	right: 58px
+	z-index: 10000
+.header_menu_button
+	cursor: pointer
+	position: relative
+	height: 45px
+	z-index: 24
+	width: 45px
+	>.__btn
+		border: 2px solid $white
+		border-radius: 4px
+		outline: 0
+		background-color: transparent
+		font-size: 14px
+		font-family: $m-bold
+		color: $white
+		text-transform: uppercase
+		width: 45px
+		height: 45px
+		line-height: 1.21
+		letter-spacing: 1.9px
+		padding: 0
+		text-align: center
+		display: block
+		cursor: pointer
+		transition: 0.1s ease all
+		transition-delay: 0.6s 
+		animation: menu_btn_hover_none 0.7s linear
+		&.__scroll
+			&:hover
+				border-width: 0!important
+		&:before
+			content: ''
+			transition: 0.4s ease 
+			transition-delay: 0.7s 
+			transform: rotate(0deg)
+			visibility: visible
+			background-color: $white
+			height: 42px
+			width: 2px
+			position: absolute
+			left: 0px
+			top: 2px
+			animation: menu_btn_close_before 0.4s
+			z-index: 5
+		&:after
+			content: ''
+			transition: 0.4s ease 
+			transition-delay: 0.7s 
+			transform: rotate(0deg)
+			visibility: visible
+			background-color: $white
+			height: 42px
+			width: 2px
+			position: absolute
+			z-index: 5
+			left: 0px
+			top: 2px
+		&.open
+			border: none
+		span
+			top: 0
+			transition: 0.5s ease all
+			&:first-child
+				transition: 0.7s linear top, 0.7s all
+				width: 0
+				height: 0
+			&:nth-child(2)
+				transition: 0.9s linear top, 0.9s font-size
+		&.__scroll
+			height: 0
+			border-color: transparent
+			background-color: transparent
+			&.__open
+				transition-delay: 1s
+			span
+				opacity: 0
+			&:after
+				transform: rotate(90deg)
+				bottom: -15px
+				left: 0
+				font-size: 0
+				right: 0
+			&:before
+				transform: rotate(90deg)
+				// top: auto
+				top: -15px
+				left: 0
+				font-size: 0
+				right: 0
+			span
+				&:first-child
+					opacity: 1
+					position: absolute
+					top: -30px
+					left: 0
+					font-size: 0
+					transform: rotate(90deg)
+					width: 2px
+					height: 55px
+					background-color: $warm-blue
+					display: inline-block
+.header_lang
+	position: fixed
+	bottom: 100px
+	right: -5vw
+	z-index: 4
+	transform: rotate(270deg)
+.header_lang_list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	li
+		display: inline-block
+		padding: 0 0 0 50px
+		a
+			color: $white
+			letter-spacing: 2.3px
+			// text-transform: uppercase
+			position: relative
+			font-family: $m-bold
+			line-height: 1.64
+			font-size: 14px
+			display: block
+			transition: 0.4s ease all
+			&:before
+				content: ''
+				width: 16px
+				height: 3px
+				position: absolute
+				top: 50%
+				left: -25px
+				background-color: $white
+				transition: 0.3s ease all
+				transform: translateY(-50%)
+.header_menu_container
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 150vw
+	transition: 0.6s linear all
+	max-width: 100vw
+	z-index: 1000
+	background-color: $warm-blue
+	color: $white
+	padding-top: 60px
+	justify-content: center
+.header_menu_container_bgi
+	position: fixed
+	top: 0
+	bottom: 0
+	left: -150vw
+	z-index: 999
+	background-color: $white
+	width: 100%
+.header_menu_container_img
+	display: inline-block
+	vertical-align: top
+	margin-left: 150px
+.header_menu_nav
+	margin-top: -30px
+.header_menu_list
+	list-style-type: none
+	text-align: center
+	padding: 0
+	max-width: 400px
+	margin: 0 auto
+	li
+		display: block
+		a
+			display: inline-block
+			letter-spacing: 1.7px
+			padding-top: 1vh
+			padding-bottom: 1vh
+			text-align: center
+			font-family: $m-black
+			color: $pale-grey-two
+			font-size: 34px
+			text-transform: uppercase
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				bottom: 0
+				height: 100%
+				width: 0%
+			&:after
+				content: ''
+				position: absolute
+				bottom: 0px
+				left: 50%
+				transform: translateX(-50%)
+				width: 50%
+				height: 3px
+				transition: 0.4s ease all
+				background-color: transparent
+.header_menu_container_close
+	position: absolute
+	top: 60px
+	right: 30px
+	vertical-align: top
+	margin-right: 100px
+	text-align: right
+	>.__btn
+		color: $white
+		outline: 0
+		background-color: transparent
+		border: none
+		font-size: 30px
+		cursor: pointer
+.header_menu_faq
+	position: absolute
+	bottom: 10vh
+	left: 50%
+	transform: translateX(-50%)
+.header_menu_faq_list
+	margin: 0
+	padding: 0
+	text-align: center
+	list-style-type: none
+	li
+		display: inline-block
+		a
+			margin: 0 70px
+			display: block
+			font-size: 27px
+			letter-spacing: 0.9px
+			color: $pale-grey-two
+			position: relative
+// HEADER ENDS
+.home-page_start
+	position: relative
+	padding-top: 170px
+	max-height: 100vh
+	height: 100vh
+.home-page_start_container
+	max-width: 1200px
+	margin: 0 auto
+	position: relative
+	z-index: 3
+.home-page_start_title
+	>.__title
+		margin-top: 31px
+		text-align: center
+		max-width: 850px
+		margin: 0 auto
+		font-size: 44px
+		line-height: 85px
+		color: $white
+		font-family: $m-bold
+.home-page_start_content
+	margin-top: 10vh
+	position: relative
+	z-index: 2
+.home-page_start_content_position
+	max-width: 350px
+	margin: 0 auto
+	min-height: 290px
+	>.__title
+		padding: 0
+		margin: 0
+		a
+			color: $warm-blue
+			font-family: $m-bold
+			font-size: 28px
+			text-transform: uppercase
+			display: block
+			padding: 22px 20px
+			position: relative
+			text-align: center
+			span
+				padding-top: 15px
+				padding-bottom: 15px
+				padding-left: 15px
+				transition: 0.4s ease all
+				color: $pale-grey
+				animation: dev-btn-hover 0.4s linear forwards
+				box-shadow: inset 0px 0px 0px 0px rgba(69, 98, 225, 1)
+	>.__content
+		font-size: 18px
+		color: $white
+		line-height: 1.74
+		padding: 0 0 0 80px
+		height: 0
+		overflow: hidden
+		transition: 0.5s ease all
+		margin-bottom: 0
+.home-page_start_video_bg
+	position: absolute
+	top: 0px
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 1
+	overflow: hidden
+	max-height: 100%
+	object-fit: cover
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: row
+	align-items: space-between
+	>video
+		// max-width: 100%
+		object-position: 50% 50%
+		// max-height: 100%
+		object-fit: cover
+.home-page_start_scroll-btn
+	position: absolute
+	z-index: 12
+	bottom: 10px
+	left: 50%
+	transform: translateX(-50%)
+	.__scroll
+		background-color: transparent
+		outline: 0
+		border: none
+		cursor: pointer
+		display: block
+.home-page_works
+	max-width: 1170px
+	margin: 0 auto
+.home-page_works_title
+	padding-top: 50px
+	margin-bottom: 50px
+	text-align: center
+	>.__title
+		color: $white
+		font-family: $m-black
+.home-page_works_position_full
+	padding: 28px 106px 40px 39px
+	background-color: $charcoal-grey
+	margin-bottom: 28px
+	transition: 0.4s ease all
+.home-page_works_position_full_img
+	display: inline-block
+	width: 49%
+	vertical-align: top
+	padding-top: 30px
+	min-height: 400px
+	img
+		transition: 0.5s ease all
+		display: none
+	canvas
+		background-color: transparent
+.home-page_works_position_full_describe
+	width: 50%
+	vertical-align: top
+	display: inline-block
+	color: $powder-blue
+	>.__class
+		line-height: 2.5
+		letter-spacing: 2.9px
+		font-size: 12px
+		font-weight: 500
+		text-transform: uppercase
+		display: inline-block
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 0
+			height: 1px
+			background-color: $powder-blue
+			transition: 0.4s width ease
+	>.__title
+		margin-top: 36px
+		margin-bottom: 0
+		font-family: $m-bold
+		font-size: 47px
+	>.__arrow
+		font-size: 90px
+		padding: 15px 18px
+		margin-left: 78px
+		line-height: 46px
+		display: inline-block
+		border: 1px solid $powder-blue
+		border-radius: 100px
+		margin-top: 40px
+		margin-bottom: 33px
+		transition: 0.3s linear all
+		a
+			color: $powder-blue
+			height: 60px
+			display: block
+			transition: 0.3s linear all
+	>.__describe
+		font-size: 16px
+		line-height: 1.63
+.home-page_works_position_double_big-height
+	padding: 42px 0 0 42px
+	background-color: $black
+	color: $red
+	max-width: 600px
+	min-height: 1049px
+	max-height: 1050px
+	transition: 0.4s ease all
+	>.__class
+		text-transform: uppercase
+		font-size: 12px
+		letter-spacing: 3px
+		display: inline-block
+		padding-bottom: 6px
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 0
+			height: 1px
+			background-color: $red
+			transition: 0.4s width ease
+	>.__title
+		font-size: 47px
+		margin-top: 28px
+		margin-bottom: 0
+		font-family: $m-bold
+	>.__arrow
+		font-size: 90px
+		padding: 15px 18px
+		margin-left: 78px
+		line-height: 46px
+		display: inline-block
+		border: 1px solid $red
+		border-radius: 100px
+		margin-top: 40px
+		margin-bottom: 33px
+		transition: 0.3s linear all
+		a
+			color: $red
+			transition: 0.3s linear all
+			height: 60px
+			display: block
+	>.__describe
+		font-size: 16px
+		line-height: 1.63
+		padding-right: 80px
+	>.grid__item-img
+		max-height: 600px
+		min-height: 499px
+		img
+			display: none
+.home-page_works_position_double_sm-height
+	&.white-bgc
+		background-color: $white
+		color: $slate-grey
+	&.purple-bgc
+		background-color: $dusk
+		color: $white
+	transition: 0.4s ease all
+	min-height: 512px
+	padding: 42px 40px 40px 40px
+	margin-bottom: 24px
+	>.__class
+		text-transform: uppercase
+		letter-spacing: 3px
+		font-size: 12px
+		padding-bottom: 6px
+		display: inline-block
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 0
+			height: 1px
+			background-color: inherit
+			transition: 0.4s width ease
+	>.__title
+		font-size: 44px
+		margin-top: 28px
+		margin-bottom: 0
+		font-family: $m-bold
+	>.__arrow
+		font-size: 90px
+		padding: 15px 18px
+		margin-left: 78px
+		line-height: 46px
+		display: inline-block
+		border: 1px solid
+		border-color: inherit
+		border-radius: 100px
+		margin-top: 40px
+		margin-bottom: 33px
+		transition: 0.3s linear all
+		a
+			color: inherit
+			transition: 0.3s linear all
+			height: 60px
+			display: block
+	>.__describe
+		font-size: 16px
+		line-height: 1.63
+.home-page_works_position_full-double
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	margin-top: 10px
+	align-items: stretch
+.home-page_works_position_full-double_position
+	transition: 0.4s ease all
+	min-height: 512px
+	padding: 42px 40px 40px 40px
+	margin-bottom: 24px
+	flex: 0 0 48.7%
+	flex-wrap: wrap
+	&.blue-bgc
+		background-color: $perrywinkle
+		color: $slate-grey
+	&.blue-dark-bgc
+		background-color: $azul
+		color: $white
+	>.__class
+		text-transform: uppercase
+		letter-spacing: 3px
+		font-size: 12px
+		padding-bottom: 6px
+		display: inline-block
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 0
+			height: 1px
+			background-color: inherit
+			transition: 0.4s width ease
+	>.__title
+		font-size: 44px
+		margin-top: 28px
+		margin-bottom: 0
+		font-family: $m-bold
+	>.__arrow
+		font-size: 90px
+		padding: 15px 18px
+		margin-left: 78px
+		line-height: 46px
+		display: inline-block
+		border: 1px solid
+		border-color: inherit
+		border-radius: 100px
+		margin-top: 40px
+		margin-bottom: 33px
+		transition: 0.3s linear all
+		a
+			color: inherit
+			transition: 0.3s linear all
+			height: 60px
+			display: block
+	>.__describe
+		font-size: 16px
+		line-height: 1.63
+.home-page_works_button
+	margin-top: 120px
+.home-page_works_button_container
+	margin: 0 auto
+	text-align: center
+	>.__btn
+		color: $warm-blue
+		font-size: 64px
+		text-transform: uppercase
+		font-family: $m-black
+		border: none
+		outline: 0
+		background-color: transparent
+		cursor: pointer
+		span
+			padding-right: 20px
+			color: $warm-blue
+			transition: 0.4s ease all
+			background-color: transparent
+			padding-left: 35px
+.home-page_slider
+	background-color: #0a101a
+	max-width: 1200px
+	margin: 0 auto 0
+	padding-top: 200px
+	padding-left: 56px
+	padding-right: 56px
+	padding-bottom: 120px
+	border-radius: 0 0 0 120px
+	position: relative
+	z-index: 3
+footer
+	overflow: hidden
+	padding-top: 160px
+	margin-top: -160px
+	&:before
+		content: ''
+		box-shadow: 0px -4px 186px -16px rgba(23,65,234,1);
+.footer-container
+	position: relative
+	z-index: 2
+	max-width: 1200px
+	margin: 0 auto
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	padding-bottom: 90px
+	padding-top: 92px
+	margin-bottom: -40px
+	&:before
+		content: ''
+		position: absolute
+		left: -290px
+		bottom: -110px
+		background-color: $warm-blue
+		height: 500px
+		width: 500px
+		z-index: 1
+		border-radius: 100px
+		transform: rotate(45deg)
+	&:after
+		content: ''
+		position: absolute
+		top: -370px
+		width: 120%
+		left: -10%
+		background: rgba(0,0,0,1);
+		background: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 9%, rgba(9,14,23,1) 62%, rgba(10,16,26,1) 69%, rgba(10,16,26,1) 100%);
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,1)), color-stop(9%, rgba(0,0,0,1)), color-stop(62%, rgba(9,14,23,1)), color-stop(69%, rgba(10,16,26,1)), color-stop(100%, rgba(10,16,26,1)));
+		background: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 9%, rgba(9,14,23,1) 62%, rgba(10,16,26,1) 69%, rgba(10,16,26,1) 100%);
+		background: -o-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 9%, rgba(9,14,23,1) 62%, rgba(10,16,26,1) 69%, rgba(10,16,26,1) 100%);
+		background: -ms-radial-gradient(center, ellipse farthest-corner, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 9%, rgba(9,14,23,1) 62%, rgba(10,16,26,1) 69%, rgba(10,16,26,1) 100%);
+		background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 9%, rgba(9,14,23,1) 62%, rgba(10,16,26,1) 69%, rgba(10,16,26,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0a101a', GradientType=1 );
+		height: 500px
+.footer-container_menu
+	vertical-align: middle
+	margin-right: auto
+	margin-left: 130px
+.footer-container_logo,
+.footer-container_menu
+	position: relative
+	z-index: 2
+	display: inline-block
+	vertical-align: middle
+.footer-container_menu_nav
+	margin: auto
+.footer-container_menu_list
+	list-style-type: none
+	margin: auto
+	padding: 0
+	li
+		display: inline-block
+		a
+			display: inline-block
+			margin: 40px 21px
+			text-transform: uppercase
+			font-size: 14px
+			font-weight: 500
+			color: $white
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				bottom: -10px
+				left: 50%
+				transform: translateX(-50%)
+				width: 50%
+				height: 2px
+				transition: 0.4s ease all
+				background-color: transparent
+.contacts-page-start
+	padding-top: 100px
+	position: relative
+	overflow: hidden
+.contacts-page-start_container
+	max-width: 1200px
+	margin: 0 auto
+.contacts-page-start_title
+	text-align: center
+	margin-bottom: 80px
+	>.__title
+		font-size: 44px
+		color: $gunmetal
+		line-height: 1.53
+		font-family: $m-black
+		max-width: 800px
+		margin: 0 auto
+		text-transform: uppercase
+.contacts-page-start_check
+	text-align: center
+	margin-bottom: 150px
+	form
+		legend
+			margin-bottom: 80px
+			font-size: 44px
+			line-height: 0.61
+			color: $warm-blue
+.contacts-page-start_check_input-container
+	display: inline-block
+	margin: 0 16px
+	border: 2px solid $warm-blue
+	border-radius: 8px
+	.__input-radio
+		display: none
+		cursor: pointer
+	.__title-radio
+		font-size: 22px
+		color: $warm-blue
+		display: block
+		width: 296px
+		height: 86px
+		line-height: 86px
+		cursor: pointer
+		text-transform: uppercase
+		font-family: $m-bold
+		background-color: transparent
+		transition: 0.3s ease all
+.contacts-page-start_info
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	margin-bottom: 250px
+.contacts-page-start_info_address
+	margin-left: 100px
+	address
+		max-width: 205px
+		font-size: 16px
+		line-height: 1.63
+		color: $gunmetal
+		font-family: $m-bold
+		font-style: normal
+	a
+		font-size: 16px
+		color: $gunmetal
+		font-family: $m-bold
+		font-style: normal
+		line-height: 1.63
+.contacts-page-start_info_messengers
+	margin-left: auto
+	margin-right: 100px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	>.__viber
+		a
+			margin: 0 15px
+			display: block
+	>.__telegram
+		a
+			margin: 0 15px
+			display: block
+	>.__whatsapp
+		a
+			margin: 0 15px
+			display: block
+.contacts-page_feedback-from
+	padding-top: 40px
+	padding-bottom: 40px
+	background-image: linear-gradient(to right, $warm-blue, #5f78e5)
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 200vw
+	right: 0
+	width: 100%
+	height: 100vh
+	z-index: 100000
+	transition: 0.4s ease all
+	overflow-y: scroll
+	&.open
+		left: 0
+.contacts-page_feedback-from_container
+	max-width: 800px
+	margin: 0 auto
+	position: relative
+	color: $pale-grey
+	.__btn-close
+		position: absolute
+		top: 10px
+		right: 10px
+		color: $pale-grey
+		font-size: 30px
+		background-color: transparent
+		border: none
+		outline: 0
+		cursor: pointer
+	form
+		.title-container
+			margin-bottom: 80px
+			.__title
+				font-family: $m-black
+				font-size: 33px
+				line-height: 0.59
+				margin-bottom: 44px
+				text-align: center
+			.__describe
+				font-size: 18px
+				line-height: 1.5
+		.input-container
+			div
+				margin-bottom: 80px
+				position: relative
+				.__title
+					text-transform: uppercase
+					font-family: $m-black
+					font-size: 12px
+					position: absolute
+					top: 20px
+					left: 0
+					transition: 0.2s ease all
+					.__incorrect
+						opacity: 0
+				.__btn
+					width: 100%
+					padding: 26px 0
+					cursor: pointer
+					text-transform: uppercase
+					border-radius: 8px
+					background-image: linear-gradient(to right, $warm-blue, #5f78e5)
+					border: 2px solid $pale-grey-two
+					font-size: 23px
+					color: $pale-grey
+					transition: 0.3s ease all
+					outline: 0
+					display: block
+				.__input,
+				.__textarea
+					outline: 0
+					border: none
+					padding-bottom: 10px
+					color: $pale-grey
+					font-size: 31px
+					font-family: $m-bold
+					border-bottom: 4px solid $pale-grey
+					background-color: transparent
+					width: 100%
+				.__textarea
+					height: 200px
+					&+.__title
+						top: 160px
+				&.success
+					.__title,
+					.__textarea
+						top: -20px
+				&.false
+					.__input
+						border-color: #f58989
+						color: #f58989
+					.__title
+						color: #f58989
+.contacts-page_thnx
+	width: 800px
+	margin: -120px auto 0
+	opacity: 0
+	transition: 0.5s ease all
+	position: relative
+	z-index: -1
+	&.open
+		opacity: 1
+		z-index: 1
+		margin-top: 100px
+.contacts-page_thnx_container
+	max-width: 1200px
+	margin: 0 auto
+.contacts-page_thnx_title
+	>.__title
+		color: $gunmetal
+		line-height: 0.59
+		font-size: 33px
+		font-family: $m-black
+		margin: 0 0 42px
+	>.__content
+		line-height: 1.5
+		color: $charcoal-grey	
+		font-size: 18px
+		max-width: 700px
+// PAGE CONTACTS ENDS
+// PAGE ABOUT US STARTS
+.wrapper.about-us.main
+	background-color: #393c45
+	color: $white
+	.header_soc_list
+		li
+			a
+				color: $white
+	.header_main_list
+		li
+			a
+				color: $white
+	.header_main_links
+		.__line
+			background-color: $white
+	.header_menu_button
+		&.about-us
+			.__btn
+				color: $white
+				border-color: $white
+				animation: menu_btn_hover_about_none 0.7s linear
+				background-color: transparent
+				transition: 0.1s ease all
+				transition-delay: 0.6s 
+				&.__scroll
+					border-color: transparent	
+					span
+						&:first-child
+							background-color: $white
+				&:before
+					background-color: $white
+				&:after
+					background-color: $white
+			&:hover
+				.__btn
+					animation: menu_btn_hover_about 0.7s ease
+					color: #393c45
+					background-color: $white
+	.home-page_works_button_container
+		.__btn
+			span
+				color: $pale-grey
+				background-color: transparent
+	.header_lang_list
+		li
+			a
+				color: $white
+	.home-page_slider
+		background-color: #393c45
+	.footer-container:after
+		content: none
+	.footer-container_menu_list li a
+		color: $white
+	.home-page_works_button_container > .__btn
+		color: $white
+.about-us-page-start
+	padding-top: 200px
+.about-us-page-start_container
+	max-width: 1200px
+	margin: 0 auto
+.about-us-page-start_title
+	padding-left: 40px
+	margin-bottom: 100px
+	>.__title
+		color: $pale-grey
+		font-size: 44px
+		letter-spacing: -0.5px
+		line-height: 1.42
+		font-family: $m-bold
+		max-width: 800px
+		margin-bottom: 80px
+		&:after
+			content: ''
+			width: 350px
+			margin-top: 30px
+			height: 10px
+			display: block
+			background-color: $warm-blue
+	>.__content
+		max-width: 680px
+		margin: 0 auto
+		font-family: $m-bold
+		font-size: 24px
+		line-height: 1.63
+		color: $pale-grey
+.about-us-page-start_value
+	padding-right: 140px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+.about-us-page-start_value_content
+	margin-left: auto
+	margin-top: 80px
+.about-us-page-start_value_content_title
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	>.__title
+		font-size: 34px
+		font-family: $m-bold
+		letter-spacing: 0.3px
+		color: $pale-grey
+		margin-left: auto
+		&:after
+			content: ''
+			width: 128px
+			height: 5px
+			background-color: $warm-blue
+			display: block
+			margin-top: 20px
+.about-us-page-start_value_content_text
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: flex-end
+	margin-top: 50px
+	.__text
+		font-size: 16px
+		line-height: 1.75
+		color: $pale-grey
+		max-width: 288px
+		&:first-child
+			margin-right: 200px
+.about-us-page_team
+	padding-top: 100px
+.about-us-page_team_container
+	max-width: 1200px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+.about-us-page_team_title
+	max-width: 680px
+	margin-bottom: 40px
+	>.__title
+		font-family: $m-black
+		font-size: 44px
+		line-height: 1.21
+		color: $pale-grey
+		margin-bottom: 36px
+		&:after
+			content: ''
+			width: 210px
+			height: 7px
+			background-color: $warm-blue
+			display: block
+			margin-top: 20px
+	>.__describe
+		color: $pale-grey
+		line-height: 1.58
+		font-size: 24px
+		padding-right: 30px
+.about-us-page_team_people
+	margin-bottom: 100px
+.about-us-page_team_people_position
+.about-us-page_team_people-container-first-line
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	.about-us-page_team_people_position
+		margin-left: auto
+		position: relative
+		margin-right: 250px
+		.about-us-page_team_people_position_describe
+			position: absolute
+			top: 90px
+			left: -65%
+			.__link
+				background-color: $pale-grey
+				padding: 5px 16px
+				border-radius: 20px
+				display: inline-block
+			.__name
+				display: inline-block
+				margin-left: 14px
+				font-size: 24px
+				color: $pale-grey
+				font-family: $m-bold
+				line-height: 1.63
+				margin-bottom: 0
+				margin-top: 0
+			.__position
+				display: block
+				margin-left: 60px
+			.__line
+				width: 180px
+				position: relative
+				z-index: 1
+				height: 2px
+				background-color: $pale-grey
+				display: inline-block
+		.about-us-page_team_people_position_img
+			position: relative
+			z-index: 2
+.about-us-page_team_people-container-second-line
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: flex-end
+	margin-top: -200px
+	.about-us-page_team_people_position
+		position: relative
+		&:first-child
+			margin-right: 50px
+			.about-us-page_team_people_position_describe
+				position: absolute
+				bottom: 80px
+				left: -220px
+				.__link
+					background-color: $pale-grey
+					padding: 5px 16px
+					border-radius: 20px
+					display: inline-block
+				.__name
+					display: inline-block
+					margin-left: 14px
+					font-size: 24px
+					color: $pale-grey
+					line-height: 1.63
+					margin-bottom: 0
+					margin-top: 0
+				.__position
+					display: block
+					margin-left: 60px
+				.__line
+					width: 180px
+					position: relative
+					z-index: 1
+					height: 2px
+					background-color: $pale-grey
+					display: inline-block
+			.about-us-page_team_people_position_img
+				position: relative
+				z-index: 2
+		&:nth-child(2)
+			.about-us-page_team_people_position_describe
+				position: absolute
+				bottom: 40px
+				left: -160px
+				.__link
+					background-color: $pale-grey
+					padding: 5px 16px
+					border-radius: 20px
+					display: inline-block
+				.__name
+					display: inline-block
+					margin-left: 14px
+					font-size: 24px
+					color: $pale-grey
+					line-height: 1.63
+					margin-bottom: 0
+					margin-top: 0
+				.__position
+					display: block
+					margin-left: 60px
+				.__line
+					width: 80px
+					position: relative
+					z-index: 1
+					height: 2px
+					background-color: $pale-grey
+					display: inline-block
+			.about-us-page_team_people_position_img
+				position: relative
+				z-index: 2
+	.__link
+		background-color: $pale-grey
+		padding: 5px 16px
+		border-radius: 20px
+		display: inline-block
+	.__name
+		display: inline-block
+		margin-left: 14px
+		font-size: 24px
+		color: $pale-grey
+		line-height: 1.63
+		margin-bottom: 0
+		margin-top: 0
+	.__position
+		display: block
+		margin-left: 60px
+	.__line
+		width: 180px
+		position: relative
+		z-index: 1
+		height: 2px
+		background-color: $pale-grey
+		display: inline-block
+.about-us-page_work
+	padding-top: 200px
+.about-us-page_work_container
+	max-width: 1200px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+.about-us-page_work_title
+	.__title
+		color: $pale-grey
+		font-family: $m-black
+		font-size: 44px
+		&:after
+			content: ''
+			display: block
+			background-color: $warm-blue
+			width: 210px
+			height: 8px
+			margin-top: 20px
+	.__content
+		font-size: 20px
+		line-height: 1.75
+		color: $pale-grey
+		letter-spacing: 0.3px
+		margin-top: 55px
+.about-us-page_work_table
+	margin-top: 60px
+	margin-bottom: 120px
+	table
+		width: 90%
+		border-spacing: 0
+		border-collapse: collapse
+		tr
+			&:last-child
+				td
+					border-bottom: 3px solid $pale-grey
+			td
+				border-top: 3px solid $pale-grey
+				font-size: 24px
+				line-height: 1.92
+				color: $pale-grey
+				font-family: $m-bold
+				&:first-child
+					padding: 28px 0 28px 52px
+				&:nth-child(2)
+					padding: 28px 52px 28px 0
+.about-us-page_work_describe
+	margin-bottom: 120px
+	.__content
+		margin: 0
+		line-height: 1.75
+		letter-spacing: 0.3px
+		font-size: 20px
+.about-us-page_button
+	margin-bottom: 120px
+	max-width: 1200px
+	margin: 0 auto
+	.page-development_button
+		.__btn
+			color: $pale-grey
+			background-color: transparent
+			span
+				background-color: transparent
+				color: $pale-grey
+		.__describe
+			color: #e3e5ed
+// PAGE ABOUT US ENDS
+// PAGE BLOS STARTS
+.wrapper
+	&.articles-page
+		.header_main_list li a
+			color: $gunmetal
+		.header_soc_list li a
+			color: $warm-blue
+			&:before
+				background-color: $warm-blue
+		.header_lang_list li a
+			color: $warm-blue
+			&:before
+				background-color: $warm-blue
+		.header_menu_button > .__btn
+			color: $warm-blue
+			border-color: $warm-blue
+			animation: dev-btn-hover-none 0.7s linear
+			&:before,
+			&:after
+				background-color: $warm-blue
+			&:hover
+				animation: menu_btn_hover-bxfwd 0.7s linear
+				background-color: $warm-blue
+				color: $white
+		.home-page_slider
+			background-color: $pale-grey
+		.footer-container_menu_list li a
+			color: $slate
+		.footer-container:after
+			background: rgba(23, 65, 234, 0.55)
+			background: -o-radial-gradient(center, ellipse arthest-corner, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+			background: -o-radial-gradient(center, ellipse, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+			background: radial-gradient(ellipse at center, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1741ea', endColorstr='#ffffff', GradientType=1 )
+.blog-page_starts
+	padding-top: 200px
+.blog-page_starts_container
+	max-width: 1200px
+	margin: 0 auto
+.blog-page_starts_positions_container
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	padding-left: 10px
+	padding-right: 10px
+	overflow: hidden
+.blog-page_starts_position_image-down,
+.blog-page_starts_position_image-top
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: stretch
+	flex: 0 0 33%
+	max-width: 33%
+	padding-left: 10px
+	padding-right: 10px
+	.__content
+		color: $charcoal-grey
+		font-size: 32px
+		line-height: 1.47
+		font-family: $m-bold
+		transition: 0.3s ease all
+		margin-top: 0
+	img
+		margin-bottom: 15px
+	.__link
+		// align-self: stretch
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+.blog-page_starts_position_image-top
+	img
+		align-self: flex-start
+.blog-page_starts_position_image-down
+	img
+		align-self: flex-end
+.blog-page_articles
+	margin-top: 50px
+.blog-page_articles-container
+	max-width: 1200px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+.blog-page_articles_sort
+	margin-bottom: 70px
+.blog-page_articles_sort_list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	li
+		display: inline-block
+		margin: 0 24px
+		&:first-child
+			margin-left: 0
+		a
+			font-family: $m-bold
+			font-size: 16px
+			color: $slate-grey
+			text-transform: uppercase
+			transition: 0.3s ease color
+			&:after
+				content: ''
+				display: block
+				height: 3px
+				width: 0
+				margin-top: 2px
+				background-color: $warm-blue
+				transition: 0.3s linear width
+		&.active
+			a
+				color: $warm-blue
+				&:after
+					width: 100%
+.blog-page_articles_positions
+	max-width: 1020px
+	position: relative
+	display: none
+	top: 200vh
+	&.active
+		display: block
+		top: 0
+.blog-page_articles_position
+	margin-bottom: 70px
+	.__title
+		margin: 0
+		.__link
+			font-size: 28px
+			color: $gunmetal
+			line-height: 1.33
+			font-family: $m-bold
+			transition: 0.3s ease all
+	.__info
+		color: #818594
+		font-size: 14px
+		margin: 0
+		.__date
+			max-width: 150px
+			padding-left: 50px
+			display: inline-block
+			position: relative
+			&:before
+				content: '\e902'
+				font-family: 'icomoon'
+				position: absolute
+				top: 2px
+				left: 5px
+				font-size: 30px
+		.__views
+			display: inline-block
+			vertical-align: top
+			padding-left: 50px
+			position: relative
+			&:before
+				content: '\e903'
+				font-family: 'icomoon'
+				position: absolute
+				top: 2px
+				left: 5px
+				font-size: 30px
+	.__content
+		line-height: 1.53
+		margin: 0
+		color: $charcoal-grey
+		font-size: 17px
+// PAGE BLOG ENDS
+// PAGE ARTICLE START
+.article-page_start
+	max-width: 1200px
+	margin: 0 auto 0
+	padding-top: 200px
+	padding-right: 15px
+	padding-left: 15px
+.article-page_start_title
+	margin-bottom: 100px
+	text-align: center
+	.__title
+		margin: 0
+		font-family: $m-black
+		color: $gunmetal
+		line-height: 1.59
+		font-size: 44px
+.article-page_start_info
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	.__name
+		color: $gunmetal
+		font-size: 14px
+		font-family: $m-bold
+		span
+			margin-right: 10px
+	.__theme
+		margin-right: auto
+		margin-left: auto
+		font-size: 14px
+		color: $gunmetal
+		font-family: $m-bold
+	.__date
+		font-size: 14px
+		color: $gunmetal
+		font-family: $m-bold
+		span
+			margin-right: 10px
+			font-size: 20px
+.article-page_start_img
+	margin-top: 50px
+	margin-bottom: 150px
+.article-page_start_describe
+	margin-left: 105px
+	.__content
+		padding-left: 51px
+		padding-right: 80px
+		font-size: 18px
+		line-height: 1.67
+		color: $gunmetal
+		font-family: $m-bold
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			background-color: $gunmetal
+			width: 3px
+			height: 128px
+.article-page_task
+	margin-top: 80px
+.article-page_task_container
+	max-width: 1200px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+.article-page_task_title
+	margin-bottom: 72px
+	.__title
+		font-family: $m-black
+		font-size: 37px
+		color: $gunmetal
+		line-height: 1.51
+		max-width: 800px
+.article-page_task_content
+	margin-bottom: 100px
+.article-page_task_list
+	margin: 0
+	list-style-type: none
+	max-width: 950px
+	li
+		padding-left: 55px
+		color: $gunmetal
+		line-height: 1.67
+		font-size: 18px
+		position: relative
+		padding-bottom: 20px
+		span,
+		.__bold
+			font-family: $m-bold
+		&:before
+			content: ''
+			width: 8px
+			height: 8px
+			border-radius: 2px
+			background-color: $gunmetal
+			transform: rotate(45deg)
+			position: absolute
+			top: 11px
+			left: 20px
+.article-page_slider
+	margin-bottom: 150px
+.article-page_slider_container	
+	max-width: 1000px
+	margin: 0 auto
+	position: relative
+	.owl-nav
+		.owl-prev
+			position: absolute
+			left: -80px
+			top: 50%
+			transform: translateY(-50%)
+			i
+				font-size: 60px
+				color: $gunmetal
+		.owl-next
+			position: absolute
+			right: -80px
+			top: 50%
+			transform: translateY(-50%)
+			i
+				font-size: 60px
+				color: $gunmetal
+	.owl-dots
+		position: absolute
+		bottom: -40px
+		left: 50%
+		transform: translateX(-50%)
+		.owl-dot
+			background-color: transparent
+			border: 2px solid $slate-grey
+			height: 16px
+			width: 16px
+			display: inline-block
+			margin: 0 10px
+			border-radius: 20px
+			transition: 0.3s ease all
+			&.active
+				background-color: $slate-grey
+.article-page_ui
+	margin-bottom: 150px
+.article-page_ui_container
+	max-width: 1200px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+	overflow: hidden
+.article-page_ui_title
+	margin-bottom: 45px
+	.__title
+		margin: 0
+		font-family: $m-black
+		color: $gunmetal
+		line-height: 1.38
+		font-size: 37px
+.article-page_ui_content
+	.__title
+		color: $gunmetal
+		font-size: 24px
+		margin-bottom: 45px
+.article-page_ui_list
+	margin: 0
+	list-style-type: none
+	max-width: 760px
+	margin: 0 auto
+	li
+		font-family: $m-reg
+		position: relative
+		color: $gunmetal
+		font-size: 18px
+		line-height: 1.67
+		margin-bottom: 30px
+		span
+			position: absolute
+			font-size: 24px
+			color: $charcoal-grey
+			top: 2px
+			font-family: $m-black
+			left: -40px
+.article-page_ui_content_text
+	margin: 100px auto 0
+	.__content
+		padding-bottom: 25px
+		line-height: 1.67
+		color: $gunmetal
+		font-size: 18px
+		max-width: 1000px
+		margin: 0 auto
+	.__blockquote
+		color: $white
+		max-width: 1200px
+		margin: 0 auto
+		background-color: $warm-blue
+		margin: 70px
+		margin-bottom: 70px
+		padding: 44px 115px 30px 106px
+		font-family: $m-bold-it
+		font-size: 20px
+		line-height: 1.7
+		position: relative
+		&:before
+			content: '\201C'
+			position: absolute
+			top: 0
+			left: 0
+			font-size: 150px
+.article-page_ui_bgi
+	margin-top: 50px
+	min-height: 800px
+	background-image: url(../img/rectangle-8-copy-6.jpg)
+	background-attachment: fixed
+	background-repeat: no-repeat
+	background-position: center center	
+.article-page_functions_container
+	max-width: 1200px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+	overflow: hidden
+.article-page_functions_title
+	max-width: 800px
+	.__title
+		font-family: $m-black
+		line-height: 1.38
+		color: $gunmetal
+		font-size: 37px
+		margin-top: 0
+		margin-bottom: 50px
+.article-page_functions_content_list
+	padding: 0
+	list-style-type: none
+	max-width: 980px
+	margin: 0 auto 100px
+	li
+		padding-left: 40px
+		line-height: 1.89
+		font-size: 18px
+		color: $gunmetal
+		position: relative
+		margin-bottom: 25px
+		span
+			font-family: $m-bold
+		&:before
+			content: ''
+			width: 15px
+			height: 15px
+			position: absolute
+			top: 11px
+			left: 0px
+			background-color: $gunmetal
+			border-radius: 2px
+			transform: rotate(45deg)
+.article-page_functions_content_more
+	margin-bottom: 70px
+	.__title
+		max-width: 1000px
+		margin: 0 auto
+		font-family: $m-black
+		font-size: 37px
+		line-height: 1.38
+		margin-top: 0
+		margin-bottom: 45px
+		color: $gunmetal
+	.__describe
+		color: $gunmetal
+		font-size: 18px
+		line-height: 1.89
+		max-width: 1000px
+		margin: 0 auto
+.article-page_functions_content_more_position
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	margin-bottom: 80px
+	align-items: center
+	.__content
+		max-width: 50%
+		padding-left: 64px
+		padding-right: 64px
+		.__text
+			line-height: 1.89
+			color: $gunmetal
+			font-size: 18px
+			margin-bottom: 20px
+			margin-top: 0
+.article-page_pagination
+	margin-top: 100px
+	margin-bottom: 150px
+.article-page_pagination_container
+	max-width: 1200px
+	margin: 0 auto
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+.article-page_pagination_prev
+	margin-right: auto
+	font-family: $m-black
+	max-width: 30%
+	.__arrow
+		font-size: 60px
+		color: #393c45
+		transition: 0.3s ease color
+	.__describe
+		color: #393c45
+		font-size: 36px
+		line-height: 1.31
+		display: inline-block
+		max-width: 80%
+		transition: 0.3s ease color
+.article-page_pagination_next
+	margin-left: auto
+	font-family: $m-black
+	max-width: 30%
+	text-align: right
+	.__arrow
+		font-size: 60px
+		color: #393c45
+		transition: 0.3s ease color
+	.__describe
+		color: #393c45
+		font-size: 36px
+		line-height: 1.31
+		display: inline-block
+		max-width: 80%
+		transition: 0.3s ease color
+.article-page_comment-block_container
+	max-width: 1000px
+	margin: 0 auto
+.article-page_comment-block_position
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	margin-bottom: 70px
+.article-page_comment-block_position_avatar
+	max-width: 130px
+	margin-right: 24px
+.article-page_comment-block_position_content
+	max-width: 860px
+	.__name
+		font-size: 22px
+		color: $gunmetal
+		font-family: $m-black
+		margin-top: 0
+		margin-bottom: 6px
+		text-transform: uppercase
+	.__date
+		line-height: 2.86
+		color: $slate-grey
+		font-size: 14px
+		font-family: $m-bold
+	.__text
+		margin-top: 0
+		color: $gunmetal
+		font-size: 16px
+		line-height: 1.75
+	.__reply
+		background-color: transparent
+		border: none
+		outline: 0
+		text-transform: uppercase
+		color: $gunmetal
+		font-size: 16px
+		font-family: $m-black
+		cursor: pointer
+		margin-right: 35px
+	.__likes,
+	.__dislike
+		background-color: transparent
+		border: none
+		outline: 0
+		text-transform: uppercase
+		color: $gunmetal
+		font-size: 16px
+		font-family: $m-black
+		cursor: pointer
+		margin-right: 35px
+		.__times
+			font-size: 15px
+			color: #a1a4b4
+.article-page_add-comment
+	margin-top: 100px
+	position: relative
+	z-index: 4
+	overflow: visible
+	.article-page_add-comment_form
+		height: 0
+		transition: 0.5s ease all
+		padding: 0
+		overflow: hidden
+		&.open
+			height: 700px
+			padding-top: 180px
+			padding-bottom: 100px
+			.article-page_add-comment_form
+				padding-top: 180px
+				padding-bottom: 100px
+				height: auto
+.article-page_add-comment_container
+	max-width: 1200px
+	margin: 0 auto
+	position: relative
+	min-height: 42px
+.article-page_add-comment_title
+	position: absolute
+	top: 25px
+	left: 120px
+	.__add-comment,
+	.__follow-us
+		opacity: 1
+		outline: 0
+		background-color: transparent
+		border: none
+		text-transform: uppercase
+		font-size: 34px
+		color: $gunmetal
+		font-family: $m-bold
+		position: relative
+		margin-right: 84px
+		padding: 0
+		cursor: pointer
+		transition: 0.3s ease color
+	.__follow-us
+		margin-right: 0
+		margin-left: 84px
+.article-page_add-comment_form
+	background-color: #d5d7de
+	padding-top: 180px
+	padding-bottom: 100px
+	form
+		max-width: 730px
+		margin: 0 auto
+		.__input-container,
+		.__textarea-container
+			position: relative
+			.__input,
+			.__textarea
+				width: 100%
+				background-color: transparent
+				border: none
+				border-bottom: 2px solid #818594
+				padding: 0 10px
+				color: $slate-grey	
+				font-size: 18px
+				margin-bottom: 60px
+				transition: 0.3s ease all
+				&:focus
+					outline: 0
+					color: $warm-blue
+					border-color: $warm-blue
+					&+.__title
+						top: -15px
+						left: 0
+			.__title
+				position: absolute
+				top: 10px
+				left: 10px
+				text-transform: uppercase
+				font-size: 12px
+				font-family: $m-black
+				color: $slate-grey
+				transition: 0.4s ease all
+			&.success
+				.__title
+					top: -15px!important
+					left: 0
+			.__textarea
+				height: 100px
+				font-family: $m-reg
+				&+.__title
+					top: 80px
+		.__btn-container
+			margin-top: 30px
+			.__btn
+				color: $charcoal-grey
+				text-transform: uppercase
+				background-color: transparent
+				outline: 0
+				border: none
+				font-size: 36px
+				font-family: $m-black
+				cursor: pointer				
+				transition: 0.5s ease all
+				span
+					transition: 0.5s ease all
+					padding: 10px 0 10px 0
+					padding-left: 24px
+					background: rgba(0,0,0,0)
+// PAGE ARTICLE ENDS
+// CASES PAGE STARTS
+.cases-page
+	margin-top: 50px
+.cases-page_container
+	max-width: 1200px
+	overflow: hidden
+	margin: 0 auto
+.cases-page_title
+	margin-bottom: 80px
+	.__title
+		font-family: $m-black
+		font-size: 44px
+		line-height: 1.44
+		color: $gunmetal
+		text-align: center
+		max-width: 800px
+		margin: 0 auto
+.cases-page_tabs_list
+	list-style-type: none
+	margin: 0 0 32px
+	padding: 0
+	li
+		margin: 0 24px
+		display: inline-block
+		&:first-child
+			margin-left: 0
+		&:last-child
+			margin-right: 0
+		a
+			font-size: 16px
+			display: block
+			font-family: $m-bold
+			color: $slate-grey
+			text-transform: uppercase
+			&:after
+				content: ''
+				width: 0
+				height: 3px
+				margin-top: 2px
+				display: block
+				background-color: $warm-blue
+				transition: 0.3s ease width
+.cases-page_content_position-full
+	background-color: #3a3938
+	overflow: hidden
+	margin-bottom: 26px
+	&.blog
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		background-color: #291139
+		.__class
+			color: $powder-blue
+			position: relative
+			&:after
+				content: ''
+				background-color: transparent
+				width: 0
+				height: 2px
+				position: absolute
+				bottom: -5px
+				left: 0
+		.__title
+			color: $powder-blue
+		.__arrow
+			border-color: $powder-blue
+			a
+				color: $powder-blue
+		.__describe
+			color: $powder-blue
+		.cases-page_content_position-full_img
+			background-image: none
+			padding-top: 50px
+			margin-right: auto
+			margin-left: 69px
+			img
+				transform: none
+.cases-page_content_position-full_img
+	max-width: 52%
+	vertical-align: top
+	display: inline-block
+	overflow-x: visible
+	position: relative
+	z-index: 1
+	background-image: linear-gradient(to right, rgba(58, 57, 56, 0), #3a3938)
+	img
+		transform: scale(1.2)
+.cases-page_content_position-full_content
+	max-width: 47%
+	display: inline-block
+	vertical-align: top
+	position: relative
+	z-index: 2
+	transition: 0.4s ease all
+	.__class
+		font-size: 15px
+		font-family: $m-bold
+		letter-spacing: 3px
+		color: $pale-grey
+		margin-top: 42px
+		text-transform: uppercase
+		display: inline-block
+		position: relative
+		&:after
+			content: ''
+			height: 2px
+			width: 0
+			position: absolute
+			bottom: -5px
+			left: 0
+			background-color: transparent
+			transition: 0.4s ease all
+	.__title
+		font-size: 44px
+		color: $pale-grey
+		font-family: $m-bold
+		margin-top: 0
+		margin-bottom: 30px
+	.__arrow
+		font-size: 90px
+		padding: 15px 18px
+		margin-left: 78px
+		line-height: 46px
+		display: inline-block
+		border: 1px solid $pale-grey
+		border-radius: 100px
+		margin-top: 0
+		margin-bottom: 21px
+		-webkit-transition: 0.3s linear all
+		-o-transition: 0.3s linear all
+		transition: 0.3s linear all
+		a
+			color: $pale-grey
+			height: 60px
+			display: block
+			-webkit-transition: 0.3s linear all
+			-o-transition: 0.3s linear all
+			transition: 0.3s linear all
+	.__describe
+		color: $pale-grey
+		line-height: 1.63
+		font-size: 16px
+		max-width: 450px
+		margin: 0 0 40px
+.cases-page_content_position-double
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: stretch
+	justify-content: space-between
+.cases-page_content_position_left-col
+	flex: 0 0 49%
+	align-items: stretch
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+.cases-page_content_position_right-col
+	flex: 0 0 49%
+	align-items: stretch
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+.cases-page_content_position_col_position
+	margin-bottom: 22px
+	flex: 0 0 100%
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+	&.aqua
+		background-color: #21459f
+		.cases-page_content_position_col_position_content
+			background-color: #21459f
+	&.blue
+		background-color: #1f15cd
+	&.white
+		background-color: $white
+		.__class
+			color: $slate-grey
+			border-color: $slate-grey
+		.__title
+			color: $slate-grey
+		.__arrow
+			border-color: $slate-grey
+			a
+				color: $slate-grey
+		.__describe
+			color: $slate-grey
+	&.black
+		background-color: $black
+		.__class
+			color: $red
+			border-color: $red
+		.__title
+			color: $red
+		.__arrow
+			border-color: $red
+			a
+				color: $red
+		.__describe
+			color: $red
+.cases-page_content_position_col_position_content
+	padding-top: 42px
+	padding-left: 42px
+	position: relative
+	z-index: 3
+	align-self: flex-start
+	.__class
+		margin: 0
+		margin-bottom: 37px
+		color: $pale-grey
+		font-size: 12px
+		letter-spacing: 3px
+		font-family: $m-bold
+		text-transform: uppercase
+		display: inline-block
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			bottom: -5px
+			left: 0
+			width: 0
+			height: 2px
+			background-color: transparent
+			transition: 0.4s ease all
+	&.white
+		.__class
+			color: $slate-grey
+	.__title
+		font-size: 44px
+		font-family: $m-bold
+		margin: 0
+		color: $pale-grey
+	&.white
+		.__title
+			color: $slate-grey
+	.__arrow
+		font-size: 70px
+		padding: 9px 18px
+		margin-left: 78px
+		line-height: 46px
+		display: inline-block
+		border: 1px solid $pale-grey
+		border-radius: 100px
+		margin-top: 32px
+		margin-bottom: 41px
+		-webkit-transition: 0.3s linear all
+		-o-transition: 0.3s linear all
+		transition: 0.3s linear all
+		a
+			color: $pale-grey
+			height: 60px
+			display: block
+			-webkit-transition: 0.3s linear all
+			-o-transition: 0.3s linear all
+			transition: 0.3s linear all
+	.__describe
+		color: $pale-grey
+		line-height: 1.63
+		font-size: 16px
+		max-width: 450px
+		margin: 0
+		padding-bottom: 40px
+	&.aqua
+		background-color: #21459f
+.cases-page_content_position_col_position_img
+	position: relative
+	z-index: 2
+	margin-top: -1px
+	background-image: linear-gradient(to bottom, #21459f, rgba(33, 69, 159, 0))
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: flex-end
+	img
+		position: relative
+		z-index: 2
+// CASES PAGE ENDS
+// CASE TAMPLATE PAGE STARTS
+.wrapper
+	&.template
+		background-color: $white
+		&.empty
+			background-image: url(http://placehold.it/2000x2000.png)
+			background-color: $white
+			background-repeat: no-repeat
+			background-size: 100%
+			background-position: center top
+			.header_menu_button
+				background-color: transparent
+				&:hover
+					.__btn
+						animation: menu_btn_hover-case-empty 0.7s linear !important
+						background-color: $slate
+						color: $white
+			.header_menu_button .__btn
+				animation: menu_btn_hover_none-case-empty 0.7s linear
+				color: $slate
+				border-color: $slate
+				border-radius: 4px
+				background-color: $white
+				&:before,
+				&:after
+					background-color: $slate
+				&.__scroll
+					border-width: 0	
+					span
+						&:first-child
+							background-color: $slate
+			.case-template_start_project_logo
+				margin-bottom: 80px
+				margin-top: -70px
+			.case-template_title .__title
+				color: $white
+			.home-page_slider
+				background-color: $white
+			.footer-container_menu_list li a
+				color: $slate
+		&.aqua
+			background-image: url(../img/fish-bottom-sea-shallow-water-614954-jpg-d.jpg)
+			background-repeat: no-repeat
+			background-position: center top
+			background-size: contain
+			background-color: $pale-grey
+			.header_main_list li a
+				color: $pale-grey
+			.header_soc_list.aqua li a
+				color: $pale-grey
+			.header_lang_list.aqua li a
+				color: $pale-grey
+			.header_main_links > .__line
+				background-color: $pale-grey
+			.header_menu
+				background-color: transparent
+			.header_menu_button
+				&.aqua
+					background-color: transparent
+					.__btn
+						animation: menu_btn_hover_none 0.7s ease
+						&:hover
+							background-color: $warm-blue
+							animation: menu_btn_hover-bxfwd 0.7s linear!important
+						&.__scroll
+							span
+								&:first-child
+									background-color: $warm-blue
+			.case-template_start
+				background-color: $pale-grey-two
+			.case-template_describe_img
+				&.aqua
+					padding-right: 20px
+					padding-left: 20px
+					background-color: $pale-grey-two
+					box-shadow: 14px 36px 60px 0 rgba(48, 49, 51, 0.12)
+					margin-bottom: 50px
+			.home-page_slider
+				background-color: $pale-grey
+			.header_menu_button .__btn
+				color: $warm-blue
+				border-color: $warm-blue
+				&:after,
+				&:before
+					background-color: $warm-blue
+	&.boxforward
+		background-image: url(../img/rectangle-6.jpg)
+		background-repeat: no-repeat
+		background-position: center top
+		background-size: 100%
+		background-color: $white
+		.header_main_list li a
+			color: $white
+		.header_menu_button
+			&:hover
+				.__btn
+					animation: menu_btn_hover-bxfwd 0.7s linear
+					background-color: $warm-blue!important
+					color: $white!important
+					&.__scroll
+						border-width: 0
+		.header_soc_list
+			li
+				a
+					color: $white
+		.header_lang_list
+			li
+				a
+					color: $white
+		.home-page_slider
+			background-color: $white
+		.footer-container:after
+			content: ''
+		.footer-container_menu_list li a
+			color: $slate
+		.article-page_pagination
+			margin-bottom: 50px
+		.contacts-page-start_title
+			margin-bottom: 50px
+			.__title
+				max-width: 1000px
+				text-transform: uppercase
+				font-family: $m-black
+				font-size: 33px
+		.contacts-page-start_check
+			margin-bottom: 0
+.case-template-empty-full
+	max-width: 100%
+	overflow: hidden
+.case-template-empty-full_content
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: center
+	max-height: 680px
+	align-items: flex-start
+.case-template-empty-full_content_position-left-img
+	flex: 0 0 20%
+	img
+		margin-left: auto
+.case-template-empty-full_content_position-center
+	flex: 0 0 40%
+.case-template-empty-full_content_position-right-img
+	flex: 0 0 20%
+	img
+		margin-left: auto
+.case-template-empty-full_content_position-center_img-bottom
+	color: $slate
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	.__content
+		margin-bottom: 0
+		margin-top: 0
+		padding-top: 15px
+		padding-bottom: 15px
+		padding-left: 10px
+		padding-right: 10px
+		color: $gunmetal
+		font-size: 18px
+		line-height: 1.72
+		max-width: 80%
+.case-template_container
+	max-width: 1200px
+	margin: 0 auto
+.case-template_title
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: flex-end
+	margin-bottom: 50px
+	.__title
+		font-size: 70px
+		font-family: $m-black
+		color: $pale-grey
+		margin-right: auto
+	.__btn
+		cursor: pointer
+		outline: 0
+		border: none
+		background-color: transparent
+		color: $pale-grey
+		font-family: $m-black
+		font-size: 25px
+.case-template_start
+	padding: 30px 40px
+	border-radius: 8px 8px 0 0
+	background-color: $pale-grey
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+.case-template_start_describe_top
+	margin-bottom: 80px
+	.__link
+		margin-bottom: 30px
+		a
+			display: block
+			font-size: 26px
+			color: $warm-blue
+	.__h-tags
+		font-family: $m-bold
+		line-height: 0.94
+		font-size: 32px
+		color: $warm-blue
+.case-template_start_describe_text
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+.case-template_start_describe_text_about
+	.__title
+		font-size: 21px
+		font-family: $m-bold
+		color: #a1a4b4
+	.__describe
+		font-size: 16px
+		line-height: 1.81
+		color: $charcoal-grey
+		max-width: 320px
+		margin-bottom: 15px
+		margin-top: 0
+	&:first-child
+		.__describe
+			margin-right: 50px
+.case-template_start_project
+	margin-left: auto
+	max-width: 280px
+.case-template_start_project_logo
+	margin-top: 86px
+	margin-bottom: 80px
+	a
+		display: block
+		img
+			margin: 0 auto
+			max-width: 225px
+.case-template_start_project_team
+	text-align: center
+	.__title
+		font-size: 21px
+		color: #a1a4b4
+		font-family: $m-bold
+.case-template_start_project_team_list
+	margin: 20px 0 0
+	padding: 0
+	list-style-type: none
+	text-align: center
+	width: 100%
+	tr
+		text-align: center
+		.__job
+			text-transform: uppercase
+			text-align: right
+			color: #a1a4b4
+			line-height: 3.33
+			font-size: 9px
+			padding-right: 4px
+		.__name
+			line-height: 2.44
+			font-size: 16px
+			color: $charcoal-grey
+			text-align: left
+			padding-left: 4px
+.case-template_describe_img
+	margin-bottom: 20px
+.case-template_describe_text
+	max-width: 1000px
+	margin: 0 auto
+	.__content
+		line-height: 1.67
+		font-size: 18px
+		color: $gunmetal
+		margin-bottom: 20px
+// CASE TAMPLATE PAGE ENDS
+// PAGE DEV STARTS
+.wrapper
+	&.page-dev
+		.header_menu
+			right: 40px
+		.header_main_list li a
+			color: $gunmetal
+		.header_soc_list li a
+			color: $warm-blue
+			&:before
+				background-color: $warm-blue
+		.header_lang_list li a
+			color: $warm-blue
+			&:before
+				background-color: $warm-blue
+		.header_menu_button > .__btn
+			color: $warm-blue
+			border-color: $warm-blue
+			animation: dev-btn-hover-none 0.7s linear
+			&:before,
+			&:after
+				background-color: $warm-blue
+			&:hover
+				animation: menu_btn_hover-bxfwd 0.7s linear
+				background-color: $warm-blue
+				color: $white
+		.home-page_works_title > .__title
+			color: $gunmetal
+		.home-page_slider
+			background-color: $pale-grey
+		.footer-container_menu_list li a
+			color: $slate
+		.footer-container:after
+			background: rgba(23, 65, 234, 0.55)
+			background: -o-radial-gradient(center, ellipse arthest-corner, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+			background: -o-radial-gradient(center, ellipse, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+			background: radial-gradient(ellipse at center, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1741ea', endColorstr='#ffffff', GradientType=1 )
+.page-development
+	padding-top: 200px
+.page-development_container
+	max-width: 1200px
+	margin: 0 auto
+	position: relative
+	padding-right: 15px
+	padding-left: 15px
+	&:after
+		content: ''
+		position: absolute
+		right: -30px
+		top: 135px
+		width: 134px
+		height: 650px
+		opacity: 0.57
+		z-index: 2
+		mix-blend-mode: multiply
+		-webkit-filter: blur(40px)
+		filter: blur(40px)
+		background-blend-mode: multiply
+		background-image: linear-gradient($perrywinkle-two, $perrywinkle-two)
+.page-development_square
+	display: inline-block
+	width: 590px
+	height: 850px
+	vertical-align: top
+	overflow: hidden
+	position: relative
+	z-index: 3
+	&:after
+		content: ''
+		width: 500px
+		height: 800px
+		background-color: $warm-blue
+		transform: rotate(-45deg)
+		border-radius: 100px
+		display: block
+		position: relative
+		top: 50px
+		right: -300px
+.page-development_content
+	// max-width: 600px
+	display: block
+	vertical-align: top
+	padding-top: 80px
+	position: relative
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		right: -300px
+		top: 50px
+		width: 500px
+		height: 850px
+		background-color: $warm-blue
+		border-radius: 100px
+		transform: rotate(-45deg)
+		z-index: 20
+.page-development_content_title
+	padding-left: 40px
+	margin-bottom: 80px
+	max-width: 600px
+	>.__title
+		font-size: 33px
+		font-family: $m-bold
+		line-height: 1.42
+		letter-spacing: -0.5px
+		color: $gunmetal
+.page-development_content_describe
+	padding-left: 40px
+	margin-bottom: 80px
+	max-width: 600px
+	>.__content
+		line-height: 1.75
+		font-size: 16px
+		color: $gunmetal
+.page-development_content_pos
+	margin-bottom: 100px
+	position: relative
+.page-development_content_pos_positions
+	position: absolute
+	top: -300px
+	left: 50%
+	transform: translateX(-50%)
+	z-index: 27
+.page-development_content_pos_positions_position
+	opacity: 0
+	position: absolute
+	top: 100vh
+	left: 50%
+	transform: translateX(-50%)
+	transition: 0.4s ease all
+	z-index: 27
+	visibility: hidden
+	width: 50vw
+	max-width: 800px
+	color: $white
+	.__btn-close
+		position: absolute
+		right: -20px
+		top: -20px
+		background-color: transparent
+		color: $white
+		outline: 0
+		border: none
+		font-size: 40px
+		cursor: pointer
+	&.active
+		visibility: visible
+		top: 0
+		opacity: 1
+	>.__title
+		font-size: 34px
+		color: $white
+		font-family: $m-bold
+		max-width: 600px
+		text-align: left
+		position: relative
+		margin-bottom: 35px
+		&:after
+			content: ''
+			position: absolute
+			bottom: -10px
+			left: 0
+			width: 80px
+			height: 2px
+			background-color: $white
+	>.__describe
+		font-family: $m-light
+		font-size: 18px
+		line-height: 1.72
+	>.__title-faq
+		text-transform: uppercase
+		font-family: $m-bold
+		a
+			color: $white
+			position: relative
+			display: inline-block
+			&:after
+				content: ''
+				position: absolute
+				bottom: -5px
+				transition: 0.4s ease all
+				left: 50%
+				width: 50%
+				transform: translateX(-50%)
+				height: 3px
+				background-color: transparent
+	>.__list
+		margin-top: 20px
+		li
+			margin: 15px 0
+			font-size: 18px
+			font-family: $m-light
+.page-development_content_pos_list
+	padding: 0
+	li
+		list-style-type: none
+		padding-left: 40px
+		position: relative
+		margin-bottom: 50px
+		&:before
+			content: ''
+			position: absolute
+			top: 12px
+			left: 5px
+			width: 16px
+			height: 16px
+			border-radius: 4px
+			transform: rotate(45deg)
+			background-color: $warm-blue
+		.__btn
+			text-align: left
+			outline: 0
+			background-color: transparent
+			border: none
+			cursor: pointer
+		.__title
+			font-size: 24px
+			line-height: 1.63
+			color: $gunmetal
+			margin: 0 0 15px
+			font-weight: normal
+		.__describe
+			font-size: 16px
+			line-height: 1.75
+			color: $gunmetal
+.page-development_button
+	text-align: center
+	margin-bottom: 80px
+	>.__btn
+		outline: 0
+		border: none
+		text-transform: uppercase
+		font-size: 48px
+		font-family: $m-black
+		line-height: 1.33
+		color: $warm-blue
+		background-color: transparent
+		cursor: pointer
+		transition: 0.4s ease all
+		margin-left: -35px
+		span
+			padding-left: 35px
+			padding-right: 5px
+			background-color: transparent
+			color: $warm-blue
+			transition: 0.4s ease all
+	>.__describe
+		max-width: 380px
+		margin: 20px auto 0
+		color: $slate-grey
+		font-size: 27px
+		line-height: 1.53
+// PAGE CONTACTS STARTS
+// PAGE DEV ENDS
+@import '_hover.sass'
+@import '_animate.sass'
+@import '_media.sass'

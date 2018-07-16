@@ -1,0 +1,316 @@
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+	&:focus
+		outline: 0
+	&:active
+		outline: 0
+button
+	&:focus
+		outline: 0
+	&:active
+		outline: 0
+@media screen and (min-width: 992px)
+	.header_menu_list
+		li
+			a
+				&:hover
+					&:after
+						width: 100%
+						background-color: $pale-grey-two
+	.header_soc_list,
+	.header_lang_list
+		li
+			&:hover
+				a
+					&:before
+						width: 100%
+						left: 0
+						height: 3px
+	.home-page_works_position_full_describe
+		>.__arrow
+			&:hover
+				background-color: $powder-blue
+				a
+					color: $charcoal-grey
+	.home-page_works_position_double_big-height
+		>.__arrow
+			&:hover
+				background-color: $red
+				a
+					color: $black
+	.home-page_works_position_double_sm-height
+		&.white-bgc
+			>.__arrow
+				&:hover
+					background-color: $slate-grey
+					a
+						color: $white
+		&.purple-bgc
+			>.__arrow
+				&:hover
+					background-color: $white
+					a
+						color: $dusk
+	.home-page_works_position_full-double_position
+		&.blue-bgc
+			>.__arrow
+				&:hover
+					background-color: $slate-grey
+					a
+						color: $perrywinkle
+		&.blue-dark-bgc
+			>.__arrow
+				&:hover
+					background-color: $white
+					a
+						color: $azul
+	.footer-container_menu_list
+		li
+			a
+				&:hover
+					&:after
+						background-color: $slate
+						width: 100%
+	.wrapper.about-us
+		.footer-container_menu_list
+			li
+				a
+					&:hover
+						&:after
+							background-color: $pale-grey
+							width: 100%
+	.wrapper.template
+		.footer-container_menu_list
+			li
+				a
+					&:hover
+						&:after
+							background-color: $slate
+							width: 100%
+	.wrapper.home
+		.footer-container_menu_list
+			li
+				a
+					&:hover
+						&:after
+							background-color: $white
+							width: 100%
+	@keyframes contacts-page-radio-after
+		0%
+			box-shadow: inset 0px 0px 0px 0px rgba(69, 98, 225, 1)
+		100%
+			box-shadow: inset 400px 0px 0px 0px rgba(69, 98, 225, 1)
+	@keyframes contacts-page-radio-before
+		0%
+			box-shadow: inset 0px 0px 0px 0px rgba(69, 98, 225, 1)
+		100%
+			box-shadow: inset -400px 0px 0px 0px rgba(69, 98, 225, 1)
+	.contacts-page-start_check_input-container
+		.__input-radio
+			&:checked
+				&+.__title-radio
+					color: $pale-grey
+					background-color: $warm-blue
+	.contacts-page_feedback-from_container
+		.input-container
+			.__input
+				&:focus
+					&+.__title
+						top: -20px
+			.__textarea
+				&:focus
+					&+.__title
+						top: -20px
+			.__btn
+				&:hover
+					border-color: $pale-grey
+					color: $warm-blue
+					background-image: none
+					background-color: $pale-grey
+	.home-page_slider_container
+		svg
+			&:hover
+				fill: red
+	.blog-page_articles_sort_list
+		li
+			a
+				&:hover
+					color: $warm-blue
+					&:after
+						width: 100%
+	.blog-page_articles_position
+	.__title
+		.__link
+			&:hover
+				color: $warm-blue
+	.blog-page_starts_position_image-down,
+	.blog-page_starts_position_image-top
+		.__content
+			&:hover
+				color: $warm-blue
+	.article-page_pagination_next,
+	.article-page_pagination_prev
+		&:hover
+			.__arrow,
+			.__describe
+				color: $warm-blue
+	.article-page_add-comment_title
+		.__add-comment,
+		.__follow-us
+			&:hover
+				color: $warm-blue
+	.cases-page_tabs_list
+		li
+			a
+				&:hover
+					color: $warm-blue
+					&:after
+						width: 100%
+	.cases-page_content_position-full_content
+		.__arrow
+			&:hover
+				border-color: #3a3938
+				background-color: $pale-grey
+				a
+					color: #3a3938
+	.cases-page_content_position_col_position
+		&.aqua
+			.cases-page_content_position_col_position_content
+				.__arrow
+					&:hover
+						border-color: #21459f
+						background-color: $pale-grey
+						a
+							color: #21459f
+		&.blue
+			.cases-page_content_position_col_position_content
+				.__arrow
+					&:hover
+						border-color: #1f15cd
+						background-color: $pale-grey
+						a
+							color: #1f15cd
+		&.white
+			.cases-page_content_position_col_position_content
+				.__arrow
+					&:hover
+						border-color: $white
+						background-color: $slate-grey
+						a
+							color: $white
+		&.black
+			.cases-page_content_position_col_position_content
+				.__arrow
+					&:hover
+						border-color: $black
+						background-color: $red
+						a
+							color: $black
+	.cases-page_content_position-full
+		&.blog
+			.__arrow
+				&:hover
+					border-color: #291139
+					background-color: $powder-blue
+					a
+						color: #291139
+	.case-template_title
+		.__btn
+			transition: 0.3s ease all
+			&:hover
+				color: $warm-blue
+	.home-page_start_content_position
+		.__title
+			&:hover
+				&+.__content
+					height: 190px
+		.__content
+			&:hover
+				height: 190px
+	.home-page_works_position_full_describe
+		&:hover
+			.__class
+				&:after
+					width: 100%
+	.home-page_works_position_double_big-height
+		&:hover
+			.__class
+				&:after
+					width: 100%
+	.home-page_works_position_double_sm-height.white-bgc
+		&:hover
+			.__class
+				&:after
+					width: 100%
+					background-color: $slate-grey
+	.home-page_works_position_full-double_position.blue-bgc
+		&:hover
+			.__class
+				&:after
+					width: 100%
+					background-color: $slate-grey
+	.home-page_works_position_full-double_position.blue-dark-bgc
+		&:hover
+			.__class
+				&:after
+					width: 100%
+					background-color: $white
+	.home-page_works_position_double_sm-height.purple-bgc
+		&:hover
+			.__class
+				&:after
+					width: 100%
+					background-color: $white
+	.page-development_content_pos_positions_position
+		>.__title-faq
+			&:hover
+				a
+					&:after
+						width: 100%
+						background-color: $white
+	.cases-page_content_position-full
+		&:hover
+			.cases-page_content_position-full_content
+				.__class
+					&:after
+						width: 100%
+						background-color: $pale-grey
+		&.blog
+			&:hover
+				.cases-page_content_position-full_content
+					.__class
+						&:after
+							width: 100%
+							background-color: $powder-blue
+	.cases-page_content_position_col_position,
+	.cases-page_content_position-full
+		transition: 0.4s ease all
+		.__arrow
+			animation: go-repeat-right 2s linear infinite
+		&:hover
+			box-shadow: 0px 0px 95px -15px rgba(39,41,47,1)
+			.__arrow
+				animation-play-state: paused
+	.cases-page_content_position_col_position_content
+		&:hover
+			.__class
+				&:after
+					width: 100%
+					background-color: $pale-grey
+	.cases-page_content_position_col_position
+		&.white	
+			.cases-page_content_position_col_position_content
+				&:hover
+					.__class
+						&:after
+							width: 100%
+							background-color: $slate-grey
+		&.black
+			.cases-page_content_position_col_position_content
+				&:hover
+					.__class
+						&:after
+							width: 100%
+							background-color: $red
