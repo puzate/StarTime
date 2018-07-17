@@ -16,6 +16,20 @@
 	0%
 		box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0)
 	25%
+		box-shadow: inset 0px 0px 0px 15px rgba(79, 82, 94, 1)
+	50%
+		box-shadow: inset 0px 0px 0px 30px rgba(79, 82, 94, 1)
+		color: $white
+	75%
+		box-shadow: inset 0px 0px 0px 45px rgba(79, 82, 94, 1)
+		color: $white
+	100%
+		box-shadow: inset 0px 0px 0px 60px rgba(79, 82, 94, 1)
+		color: $white
+@keyframes menu_btn_hover-bxfwd-aqua
+	0%
+		box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0)
+	25%
 		box-shadow: inset 0px 0px 0px 15px rgba(69, 98, 225, 1)
 	50%
 		box-shadow: inset 0px 0px 0px 30px rgba(69, 98, 225, 1)
@@ -221,6 +235,10 @@
 		box-shadow: inset 0px 0px 0px 0px rgba(247, 248, 249, 1)
 	100%
 		box-shadow: inset 400px 0px 0px 0px rgba(247, 248, 249, 1)
+.blog-page_articles_positions
+	animation: blog-tabs_not linear 1s
+	&.active
+		animation: blog-tabs linear 1s
 @media screen and (min-width: 992px)
 	.header_menu_button
 		&:hover
@@ -286,10 +304,6 @@
 					// background-color: $slate
 					color: $white
 					animation: menu-btn-hover-aqua 0.6s ease forwards
-	.blog-page_articles_positions
-		animation: blog-tabs_not linear 1s
-		&.active
-			animation: blog-tabs linear 1s
 	.article-page_add-comment_form
 		.__btn-container
 			.__btn
@@ -433,45 +447,45 @@
 		100%
 			top: 0
 			opacity: 1
-	.case-template
-		top: 100vh
-		opacity: 0
-		position: relative
-		&.__open
-			animation: case-template-up 0.8s ease forwards 1s
-	.case-template_start
-		top: 100vh
-		opacity: 0
-		position: relative
-		&.__open
-			animation: case-template-up 0.8s ease forwards 1.3s
-	.case-template_start_describe_text_about
-		top: 100vh
-		opacity: 0
-		position: relative
-		&.__open	
-			&:first-child
-				animation: case-template-up 0.8s ease forwards 0.3s
-			&:last-child
-				animation: case-template-up 0.8s ease forwards 0.5s
-	.case-template_start_project_team
-		top: 100vh
-		position: relative
-		opacity: 0
-		&.__open
-			animation: case-template-up 0.8s ease forwards 0.8s
-	.case-template_describe_img
-		top: 100vh
-		position: relative
-		opacity: 0
-		&.__open
-			animation: case-template-up 0.5s ease forwards 1.3s
-	.case-template_describe_text
-		top: 100vh
-		position: relative
-		opacity: 0
-		&.__open
-			animation: case-template-up 0.5s ease forwards .1s
+	// .case-template
+	// 	top: 100vh
+	// 	opacity: 0
+	// 	position: relative
+	// 	&.__open
+	// 		animation: case-template-up 0.8s ease forwards 1s
+	// .case-template_start
+	// 	top: 100vh
+	// 	opacity: 0
+	// 	position: relative
+	// 	&.__open
+	// 		animation: case-template-up 0.8s ease forwards 1.3s
+	// .case-template_start_describe_text_about
+	// 	top: 100vh
+	// 	opacity: 0
+	// 	position: relative
+	// 	&.__open	
+	// 		&:first-child
+	// 			animation: case-template-up 0.8s ease forwards 0.3s
+	// 		&:last-child
+	// 			animation: case-template-up 0.8s ease forwards 0.5s
+	// .case-template_start_project_team
+	// 	top: 100vh
+	// 	position: relative
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: case-template-up 0.8s ease forwards 0.8s
+	// .case-template_describe_img
+	// 	top: 100vh
+	// 	position: relative
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: case-template-up 0.5s ease forwards 1.3s
+	// .case-template_describe_text
+	// 	top: 100vh
+	// 	position: relative
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: case-template-up 0.5s ease forwards .1s
 	@keyframes from-left
 		0%
 			left: -100vw
@@ -500,24 +514,24 @@
 		100%
 			right: 0
 			opacity: 1
-	.case-template-empty-full_content_position-left-img
-		position: relative
-		left: -100vw
-		opacity: 0
-		&.__open
-			animation: from-left 1s ease forwards
-	.case-template-empty-full_content_position-center
-		position: relative
-		top: 100vh
-		opacity: 0
-		&.__open
-			animation: from-bottom 1s ease forwards
-	.case-template-empty-full_content_position-right-img
-		position: relative
-		right: -100vw
-		opacity: 0
-		&.__open
-			animation: from-right 1s ease forwards
+	// .case-template-empty-full_content_position-left-img
+	// 	position: relative
+	// 	left: -100vw
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: from-left 1s ease forwards
+	// .case-template-empty-full_content_position-center
+	// 	position: relative
+	// 	top: 100vh
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: from-bottom 1s ease forwards
+	// .case-template-empty-full_content_position-right-img
+	// 	position: relative
+	// 	right: -100vw
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: from-right 1s ease forwards
 	@keyframes footer-container-before
 		0%
 			bottom: -1000px
@@ -545,7 +559,8 @@
 			left: -5px
 		100%
 			left: 0px
-	.home-page_works_position_full
+	.home-page_works_position_full,
+	.cases-page_content_position-full
 		.__arrow
 			a
 				position: relative
@@ -559,7 +574,8 @@
 			.__arrow
 				a
 					animation: go-repeat-right 2s linear infinite
-	.home-page_works_position_double_big-height
+	.home-page_works_position_double_big-height,
+	.cases-page_content_position_col_position
 		.__arrow
 			a
 				position: relative
@@ -589,48 +605,6 @@
 			.__arrow
 				a
 					animation: go-repeat-right 2s linear infinite
-	.cases-page_title .__title
-		position: relative
-		opacity: 0
-		top: 100vh
-		&.__open
-			animation: from-bottom 0.4s ease forwards 0.5s
-	.cases-page_tabs_list
-		position: relative
-		opacity: 0
-		left: -100vw
-		&.__open
-			animation: from-left 0.4s ease forwards 0.7s
-	.cases-page_content_position-full
-		position: relative
-		top: 100vh
-		opacity: 0
-		&.__open
-			animation: from-bottom 0.4s ease forwards 0.9s
-	.cases-page_content_position_col_position.aqua
-		position: relative
-		left: -100vw
-		opacity: 0
-		&.__open
-			animation: from-left 0.4s ease forwards 0.2s
-	.cases-page_content_position_col_position.white
-		position: relative
-		right: -100vw
-		opacity: 0
-		&.__open
-			animation: from-right 0.4s ease forwards 0.4s
-	.cases-page_content_position_col_position.black
-		position: relative
-		right: -100vw
-		opacity: 0
-		&.__open
-			animation: from-right 0.4s ease forwards 0.7s
-	.cases-page_content_position_col_position.blue
-		position: relative
-		left: -100vw
-		opacity: 0
-		&.__open
-			animation: from-left 0.4s ease forwards 0.7s
 	@keyframes about-us-link
 		0%
 			height: 0
@@ -696,32 +670,32 @@
 						animation: about-us-line-first 0.3s ease forwards 0.9s
 					.__position
 						animation: abous-is-position 0.3s ease forwards 1.5s
-	.contacts-page-start_title
-		position: relative
-		top: 100vh
-		opacity: 0
-		&.__open
-			animation: from-bottom 0.4s ease forwards 0.7s
-	.contacts-page-start_check
-		position: relative
-		top: 100vh
-		opacity: 0
-		&.__open
-			animation: from-bottom 0.4s ease forwards 1s
-	.contacts-page-start_info
-		overflow: hidden
-	.contacts-page-start_info_address
-		position: relative
-		opacity: 0
-		left: -100vw
-		&.__open
-			animation: from-left 0.4s ease forwards 0.3s
-	.contacts-page-start_info_messengers
-		position: relative
-		opacity: 0
-		right: -100vw
-		&.__open
-			animation: from-right 0.4s ease forwards 0.3s
+	// .contacts-page-start_title
+	// 	position: relative
+	// 	top: 100vh
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: from-bottom 0.4s ease forwards 0.7s
+	// .contacts-page-start_check
+	// 	position: relative
+	// 	top: 100vh
+	// 	opacity: 0
+	// 	&.__open
+	// 		animation: from-bottom 0.4s ease forwards 1s
+	// .contacts-page-start_info
+	// 	overflow: hidden
+	// .contacts-page-start_info_address
+	// 	position: relative
+	// 	opacity: 0
+	// 	left: -100vw
+	// 	&.__open
+	// 		animation: from-left 0.4s ease forwards 0.3s
+	// .contacts-page-start_info_messengers
+	// 	position: relative
+	// 	opacity: 0
+	// 	right: -100vw
+	// 	&.__open
+	// 		animation: from-right 0.4s ease forwards 0.3s
 	@keyframes scroll_mouse_move
 		0%
 			transform: translate3d(-50%, -10px, 0)

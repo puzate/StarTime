@@ -863,7 +863,7 @@ footer
 				transition: 0.4s ease all
 				background-color: transparent
 .contacts-page-start
-	padding-top: 100px
+	padding-top: 200px
 	position: relative
 	overflow: hidden
 .contacts-page-start_container
@@ -883,6 +883,7 @@ footer
 .contacts-page-start_check
 	text-align: center
 	margin-bottom: 150px
+	overflow: hidden
 	form
 		legend
 			margin-bottom: 80px
@@ -909,6 +910,13 @@ footer
 		font-family: $m-bold
 		background-color: transparent
 		transition: 0.3s ease all
+		&:before,
+		&:after
+			transition-delay: 0.4s
+		&:hover
+			&:before,
+			&:after
+				background-color: $warm-blue
 .contacts-page-start_info
 	display: -webkit-flex
 	display: -moz-flex
@@ -1459,7 +1467,7 @@ footer
 			&:after
 				background-color: $warm-blue
 			&:hover
-				animation: menu_btn_hover-bxfwd 0.7s linear
+				animation: menu_btn_hover-bxfwd-aqua 0.7s linear
 				background-color: $warm-blue
 				color: $white
 		.home-page_slider
@@ -1913,6 +1921,7 @@ footer
 	display: -o-flex
 	display: flex
 	align-items: center
+	overflow: hidden
 .article-page_pagination_prev
 	margin-right: auto
 	font-family: $m-black
@@ -2111,11 +2120,14 @@ footer
 // PAGE ARTICLE ENDS
 // CASES PAGE STARTS
 .cases-page
-	margin-top: 50px
+	padding-top: 200px
 .cases-page_container
 	max-width: 1200px
-	overflow: hidden
+	position: relative
+	z-index: 10
 	margin: 0 auto
+	padding-right: 15px
+	padding-left: 15px
 .cases-page_title
 	margin-bottom: 80px
 	.__title
@@ -2151,6 +2163,29 @@ footer
 				display: block
 				background-color: $warm-blue
 				transition: 0.3s ease width
+		&.active
+			a
+				color: $warm-blue
+				&:after
+					width: 100%
+.cases-page_content
+	opacity: 0
+	visibility: hidden
+	transform: translate3d(0,100vh,0)
+	transition: 0.4s ease all
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	z-index: -2
+	&.active
+		opacity: 1
+		z-index: 1
+		visibility: visible
+		transform: translate3d(0,0,0)
+		position: static
+.cases-page_content_tabs
+	position: relative
 .cases-page_content_position-full
 	background-color: #3a3938
 	overflow: hidden
@@ -2412,6 +2447,13 @@ footer
 			background-repeat: no-repeat
 			background-size: 100%
 			background-position: center top
+			.header_soc_list li a, .header_lang_list li a
+				&.__black
+					color: $warm-blue
+					&:before
+						background-color: $warm-blue
+			.contacts-page-start
+				padding-top: 0
 			.header_menu_button
 				background-color: transparent
 				&:hover
@@ -2442,6 +2484,12 @@ footer
 				background-color: $white
 			.footer-container_menu_list li a
 				color: $slate
+			.footer-container:after
+				background: rgba(23, 65, 234, 0.55);
+				background: -o-radial-gradient(center, ellipse arthest-corner, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+				background: -o-radial-gradient(center, ellipse, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+				background: radial-gradient(ellipse at center, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%)
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1741ea', endColorstr='#ffffff', GradientType=1 )
 		&.aqua
 			background-image: url(../img/fish-bottom-sea-shallow-water-614954-jpg-d.jpg)
 			background-repeat: no-repeat
@@ -2462,10 +2510,10 @@ footer
 				&.aqua
 					background-color: transparent
 					.__btn
-						animation: menu_btn_hover_none 0.7s ease
+						animation: none
 						&:hover
 							background-color: $warm-blue
-							animation: menu_btn_hover-bxfwd 0.7s linear!important
+							animation: menu_btn_hover-bxfwd-aqua 0.7s linear!important
 						&.__scroll
 							span
 								&:first-child
@@ -2495,26 +2543,51 @@ footer
 		background-color: $white
 		.header_main_list li a
 			color: $white
+		.header_main_links > .__line
+			background-color: $white
 		.header_menu_button
+			background-color: transparent
 			&:hover
 				.__btn
-					animation: menu_btn_hover-bxfwd 0.7s linear
-					background-color: $warm-blue!important
-					color: $white!important
-					&.__scroll
-						border-width: 0
+					// animation: menu_btn_hover-bxfwd 0.7s linear
+					// background-color: $white!important
+					// color: $white!important
+			&.__black
+				.__btn
+					color: $gunmetal
+					border-color: $gunmetal
+					&:before,
+					&:after
+						background-color: $gunmetal
+				&:hover
+					.__btn
+						animation: menu_btn_hover-case-empty 0.7s linear
+						background-color: $gunmetal!important
+						color: $white !important
 		.header_soc_list
 			li
 				a
 					color: $white
+					&.__black
+						color: $gunmetal
+						&:before
+							background-color: $gunmetal
 		.header_lang_list
 			li
 				a
 					color: $white
+					&.__black
+						color: $gunmetal
+						&:before
+							background-color: $gunmetal
 		.home-page_slider
 			background-color: $white
 		.footer-container:after
-			content: ''
+			background: rgba(23, 65, 234, 0.55);
+			background: -o-radial-gradient(center, ellipse arthest-corner, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%);
+			background: -o-radial-gradient(center, ellipse, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%);
+			background: radial-gradient(ellipse at center, rgba(23, 65, 234, 0.55) 0%, rgba(23, 65, 234, 0.49) 11%, rgba(246, 246, 246, 0.26) 53%, rgba(255, 255, 255, 0.04) 92%, rgba(255, 255, 255, 0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1741ea', endColorstr='#ffffff', GradientType=1 );
 		.footer-container_menu_list li a
 			color: $slate
 		.article-page_pagination
@@ -2528,6 +2601,9 @@ footer
 				font-size: 33px
 		.contacts-page-start_check
 			margin-bottom: 0
+.case-template
+	padding-top: 200px
+	overflow: hidden
 .case-template-empty-full
 	max-width: 100%
 	overflow: hidden
@@ -2571,6 +2647,8 @@ footer
 .case-template_container
 	max-width: 1200px
 	margin: 0 auto
+	padding-right: 15px
+	padding-left: 15px
 .case-template_title
 	display: -webkit-flex
 	display: -moz-flex
@@ -2707,7 +2785,7 @@ footer
 			&:after
 				background-color: $warm-blue
 			&:hover
-				animation: menu_btn_hover-bxfwd 0.7s linear
+				animation: menu_btn_hover-bxfwd-aqua 0.7s linear
 				background-color: $warm-blue
 				color: $white
 		.home-page_works_title > .__title
