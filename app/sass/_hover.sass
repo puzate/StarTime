@@ -263,13 +263,29 @@ button
 				&:after
 					width: 100%
 					background-color: $white
-	.page-development_content_pos_positions_position
-		>.__title-faq
+	@keyframes page-dev-list-before
+		0%
+			transform: rotate(45deg)
+		50%
+			transform: rotate(225deg)
+		100%
+			transform: rotate(45deg)
+	.page-development_content_pos_list
+		>li
 			&:hover
-				a
-					&:after
-						width: 100%
-						background-color: $white
+				&:before
+					animation-play-state: running
+			.__content-container
+				.__link
+					&:hover
+						&:after
+							width: 100%
+				.__list
+					li
+						a
+							&:hover
+								&:after
+									width: 100%
 	.cases-page_content_position-full
 		&:hover
 			.cases-page_content_position-full_content

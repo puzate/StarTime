@@ -184,7 +184,7 @@ header
 .header_menu
 	position: fixed
 	top: 58px
-	right: 58px
+	right: 45px
 	z-index: 10000
 .header_menu_button
 	cursor: pointer
@@ -1494,6 +1494,7 @@ footer
 	padding-left: 10px
 	padding-right: 10px
 	overflow: hidden
+	justify-content: space-between
 .blog-page_starts_position_image-down,
 .blog-page_starts_position_image-top
 	display: -webkit-flex
@@ -1503,26 +1504,41 @@ footer
 	display: flex
 	align-items: stretch
 	flex: 0 0 33%
-	max-width: 33%
-	padding-left: 10px
-	padding-right: 10px
+	max-width: 32%
+	min-height: 450px
+	max-height: 450px
+	position: relative
 	.__content
 		color: $charcoal-grey
-		font-size: 32px
-		line-height: 1.47
+		font-size: 28px
+		line-height: 1.29
+		background-color: $pale-grey
 		font-family: $m-bold
 		transition: 0.3s ease all
 		margin-top: 0
+		align-self: flex-start
 	img
-		margin-bottom: 15px
+		bottom: 0
+		left: 0
+		right: 0
+		position: absolute
+		display: block
+		z-index: -1
 	.__link
-		// align-self: stretch
 		display: -webkit-flex
 		display: -moz-flex
 		display: -ms-flex
 		display: -o-flex
 		display: flex
 		flex-wrap: wrap
+	&:nth-child(2)
+		.__link	
+			.__content
+				order: 1
+				align-self: flex-end
+			img
+				bottom: auto
+				top: 0
 .blog-page_starts_position_image-top
 	img
 		align-self: flex-start
@@ -1587,10 +1603,10 @@ footer
 	.__info
 		color: #818594
 		font-size: 14px
-		margin: 0
+		margin: 0 0 10px
 		.__date
 			max-width: 150px
-			padding-left: 50px
+			padding-left: 30px
 			display: inline-block
 			position: relative
 			&:before
@@ -1599,11 +1615,11 @@ footer
 				position: absolute
 				top: 2px
 				left: 5px
-				font-size: 30px
+				font-size: 20px
 		.__views
 			display: inline-block
 			vertical-align: top
-			padding-left: 50px
+			padding-left: 30px
 			position: relative
 			&:before
 				content: '\e903'
@@ -1611,12 +1627,12 @@ footer
 				position: absolute
 				top: 2px
 				left: 5px
-				font-size: 30px
+				font-size: 20px
 	.__content
-		line-height: 1.53
+		line-height: 1.38
 		margin: 0
 		color: $charcoal-grey
-		font-size: 17px
+		font-size: 16px
 // PAGE BLOG ENDS
 // PAGE ARTICLE START
 .article-page_start
@@ -2764,6 +2780,14 @@ footer
 // CASE TAMPLATE PAGE ENDS
 // PAGE DEV STARTS
 .wrapper
+	&.dev-page
+		background-color: $pale-grey
+	&.promo-page
+		background-color: #fafcee
+	&.marketing-page
+		background-color: #eef0fc
+		.page-development_content:after
+			box-shadow: 10px 10px 85px 0px rgba(255,255,255,1)
 	&.page-dev
 		.header_menu
 			right: 40px
@@ -2816,7 +2840,7 @@ footer
 		width: 134px
 		height: 650px
 		opacity: 0.57
-		z-index: 2
+		z-index: -1
 		mix-blend-mode: multiply
 		-webkit-filter: blur(40px)
 		filter: blur(40px)
@@ -2880,114 +2904,177 @@ footer
 .page-development_content_pos
 	margin-bottom: 100px
 	position: relative
-.page-development_content_pos_positions
-	position: absolute
-	top: -300px
-	left: 50%
-	transform: translateX(-50%)
-	z-index: 27
-.page-development_content_pos_positions_position
-	opacity: 0
-	position: absolute
-	top: 100vh
-	left: 50%
-	transform: translateX(-50%)
-	transition: 0.4s ease all
-	z-index: 27
-	visibility: hidden
-	width: 50vw
-	max-width: 800px
-	color: $white
-	.__btn-close
-		position: absolute
-		right: -20px
-		top: -20px
-		background-color: transparent
-		color: $white
-		outline: 0
-		border: none
-		font-size: 40px
-		cursor: pointer
-	&.active
-		visibility: visible
-		top: 0
-		opacity: 1
-	>.__title
-		font-size: 34px
-		color: $white
-		font-family: $m-bold
-		max-width: 600px
-		text-align: left
-		position: relative
-		margin-bottom: 35px
-		&:after
-			content: ''
-			position: absolute
-			bottom: -10px
-			left: 0
-			width: 80px
-			height: 2px
-			background-color: $white
-	>.__describe
-		font-family: $m-light
-		font-size: 18px
-		line-height: 1.72
-	>.__title-faq
-		text-transform: uppercase
-		font-family: $m-bold
-		a
-			color: $white
-			position: relative
-			display: inline-block
-			&:after
-				content: ''
-				position: absolute
-				bottom: -5px
-				transition: 0.4s ease all
-				left: 50%
-				width: 50%
-				transform: translateX(-50%)
-				height: 3px
-				background-color: transparent
-	>.__list
-		margin-top: 20px
-		li
-			margin: 15px 0
-			font-size: 18px
-			font-family: $m-light
 .page-development_content_pos_list
 	padding: 0
-	li
+	>li
 		list-style-type: none
 		padding-left: 40px
 		position: relative
-		margin-bottom: 50px
+		padding-top: 25px
+		padding-bottom: 25px
+		transition: 0.4s ease all
 		&:before
 			content: ''
 			position: absolute
-			top: 12px
-			left: 5px
+			top: 37px
+			left: 15px
 			width: 16px
 			height: 16px
 			border-radius: 4px
 			transform: rotate(45deg)
+			animation: 3.5s linear page-dev-list-before infinite paused
+			// animation: 0.5s linear page-dev-before-close forwards
 			background-color: $warm-blue
+			transition: 0.4s ease all
 		.__btn
 			text-align: left
 			outline: 0
 			background-color: transparent
 			border: none
 			cursor: pointer
+			padding: 0
+			padding-left: 10px
 		.__title
 			font-size: 24px
 			line-height: 1.63
 			color: $gunmetal
 			margin: 0 0 15px
 			font-weight: normal
+			max-width: 70%
 		.__describe
 			font-size: 16px
 			line-height: 1.75
 			color: $gunmetal
+			max-width: 70%
+			transition: 0.4s ease all
+		.__content-container
+			position: relative
+			background-color: $warm-blue
+			margin-left: -40px
+			padding-left: 50px
+			z-index: 5
+			transition: 0.4s linear all
+			visibility: hidden
+			opacity: 0
+			.__link
+				color: $white
+				font-size: 20px
+				font-family: $m-bold
+				position: relative
+				display: inline-block
+				margin-top: 30px
+				&:after
+					content: ''
+					position: absolute
+					bottom: 0
+					left: 0
+					width: 0
+					height: 2px
+					background-color: $white
+					display: block
+					transition: 0.4s ease all
+			.__title
+				color: $white
+				max-width: 70%
+				transition: 0.4s ease all
+				max-height: 0
+				opacity: 0
+			.__content
+				font-size: 18px
+				line-height: 1.72
+				color: $white
+				font-family: $m-light
+				max-width: 70%
+				transition: 0.4s ease all
+				max-height: 0
+				opacity: 0
+				margin: 0
+			.__faq-title
+				color: $white
+				font-size: 24px
+				font-family: $m-reg
+				margin-top: 0px
+				display: block
+				transition: 0.4s ease all
+				max-height: 0
+				opacity: 0
+			.__list
+				list-style-type: none
+				max-width: 70%
+				transition: 0.4s ease all
+				padding-left: 0
+				max-height: 0
+				opacity: 0
+				margin-top: 0
+				li
+					color: $white
+					font-size: 18px
+					font-family: $m-bold
+					line-height: 1.72
+					margin: 9px 0
+					transition: 0.4s ease all
+					position: relative
+					padding-left: 40px
+					a
+						color: $white
+						transition: 0.4s ease all
+						opacity: 0
+						visibility: hidden
+						display: inline-block
+						position: relative
+						&:after
+							content: ''
+							position: absolute
+							bottom: 0
+							left: 0
+							background-color: $white
+							width: 0
+							height: 2px
+							transition: 0.4s ease all
+					&:before
+						content: ''
+						position: absolute
+						left: 20px
+						top: 50%
+						transform: translateY(-50%)
+						width: 4px
+						height: 4px
+						background-color: $white
+						border-radius: 50%
+		&.open
+			color: $white
+			&:before
+				animation: 0.5s linear page-dev-before-open
+				animation-fill-mode: forwards
+			.__btn
+				.__title
+					color: $white
+				.__describe
+					max-height: 0
+					opacity: 0
+					margin: 0
+			.__content-container
+				visibility: visible
+				// position: relative
+				z-index: -1
+				opacity: 1
+				padding: 80px 0 40px 50px
+				transform: translateY(-80px)
+				.__content
+					max-height: 1000px
+					opacity: 1
+				.__faq-title
+					max-height: 1000px
+					margin-top: 50px
+					opacity: 1
+				.__list
+					max-height: 1000px
+					opacity: 1
+					margin-top: 30px
+					li
+						a
+							opacity: 1
+							visibility: visible
 .page-development_button
 	text-align: center
 	margin-bottom: 80px

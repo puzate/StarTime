@@ -30,6 +30,8 @@
 		right: -9vw
 	.header_soc
 		left: -10vw
+	.header_menu
+		right: 15px
 	.page-development_container
 		&:after
 			content: none
@@ -39,8 +41,14 @@
 		padding-top: 0
 		max-width: 800px
 		margin: 0 auto
-		text-align: center
 		display: block
+	.page-development_content_describe
+		max-width: 500px
+	.page-development_content:after
+		right: -180px
+		top: 130px
+		width: 300px
+		height: 500px
 	.page-development_content_title
 		padding-right: 40px
 		>.__title
@@ -48,11 +56,9 @@
 	.page-development_square
 		display: none
 	.page-development_content_pos_list li
-		display: inline-block
-		max-width: 45%
-		vertical-align: top
-		text-align: left
-		margin-bottom: 20px
+	.page-development_content_pos_list > li.open .__content-container
+		padding-top: 100px
+		transform: translateY(-100px)
 	.page-development_content_pos
 		margin-bottom: 50px
 	.home-page_start_content_position > .__title a span
@@ -258,6 +264,8 @@
 @media screen and (max-width: 991px)
 	.header_lang
 		right: -12vw
+	.wrapper.page-dev .header_menu
+		right: 10px
 	.header_lang_list li a
 		font-size: 15px
 	.header_soc_list li a
@@ -270,6 +278,10 @@
 		padding-right: 40px
 	.home-page_start_content
 		margin-top: 50px
+	.page-development_content_describe
+		max-width: 420px
+	.page-development_content_pos_list > li .__title
+		max-width: 90%
 	.home-page_start_content_position > .__title a
 		font-size: 24px
 		padding-right: 0
@@ -417,11 +429,15 @@
 		img
 			display: none
 	.blog-page_starts_positions_container
-	.blog-page_starts_position_image-top,
 	.blog-page_starts_position_image-down
 		position: relative
+		min-height: 0
+		&:nth-child(2)
+			.__link
+				.__content
+					align-self: flex-start
 		&:after
-			content: ''
+			content: none
 			position: absolute
 			bottom: 0
 			left: 0
@@ -666,6 +682,8 @@
 		font-family: $m-black
 	.page-development
 		padding-top: 0
+	.page-development_content
+		padding-top: 50px
 	.page-development_content_title
 		margin-bottom: 20px
 		padding: 0
@@ -675,12 +693,18 @@
 			line-height: 1.34
 	.page-development_content_describe
 		margin-bottom: 20px
+		padding-left: 0
+		padding-right: 0
 	.page-development_content_pos_list li
 		max-width: 100%
 		display: block
-		margin-left: 10px
-	.page-development_content_pos_list li > .__title
+		padding-top: 0
+		padding-left: 20px
+	.page-development_content_pos_list li .__btn
+		padding-left: 0
+	.page-development_content_pos_list li .__btn > .__title
 		font-size: 16px
+		max-width: 100%
 		font-family: $m-bold
 	.page-development_content_pos_list li > .__describe
 		font-size: 14px
@@ -691,6 +715,9 @@
 		span
 			padding-right: 0
 			padding-left: 0
+	.page-development_content_pos_list > li .__describe
+		max-width: 100%
+		font-size: 14px
 	.page-development_button > .__describe
 		font-size: 24px
 	.home-page_start_content_position > .__content
@@ -769,7 +796,10 @@
 				padding-bottom: 12px
 				font-family: $m-bold
 	.page-development_content_pos_list li:before
-		top: 6px
+		width: 10px
+		height: 10px
+		top: 10px
+		left: 2px
 	.contacts-page-start
 		padding-top: 0
 	.contacts-page-start_title > .__title
@@ -920,6 +950,10 @@
 		margin-bottom: 15px
 		margin-top: 15px
 		max-width: 100%
+		min-height: 0
+		max-height: 1000px
+		&:after
+			content: ''
 	.blog-page_starts
 		padding-top: 50px
 	.blog-page_articles_sort_list
