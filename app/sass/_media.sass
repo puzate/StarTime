@@ -223,44 +223,14 @@
 	.about-us-page-start_value_content_text .__text
 		line-height: 1.55
 	.about-us-page_team
-		padding-top: 100px
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position
-		margin-right: 200px
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_img
-		max-width: 300px
-		img
-			max-width: 100%
-			display: block
-			height: auto
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_img
-		max-width: 300px
-		img
-			display: block
-			max-width: 100%
-			height: auto
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:nth-child(2) .about-us-page_team_people_position_img
-		max-width: 300px
-		img
-			display: block
-			max-width: 100%
-			height: auto
-	.about-us-page_team_people-container-second-line
-		margin-top: -150px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child
-		margin-right: 90px
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_describe
-		left: -90%
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_describe
-		bottom: 40px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:nth-child(2) .about-us-page_team_people_position_describe
-		bottom: -10px
-		.__line
-			max-width: 50px
+		padding-top: 50px
 	.about-us-page_work
-		padding-top: 100px
+		padding-top: 50px
 	.about-us-page_work_table table tr td:first-child
 		padding-left: 20px
 		padding-right: 30px
+	.about-us-page_work_table
+		margin-bottom: 40px
 @media screen and (max-width: 991px)
 	.header_lang
 		right: -12vw
@@ -521,6 +491,8 @@
 	.about-us-page-start
 		margin-top: 0
 		padding-top: 180px
+		background-size: 500px 500px
+		padding-bottom: 0
 	.about-us-page-start_title > .__title
 		margin-top: 0
 		font-size: 42px
@@ -537,57 +509,25 @@
 	.about-us-page_team_title > .__title
 		font-size: 38px
 	.about-us-page_team_title > .__describe
-		font-size: 20px
-	.about-us-page_team_people-container-first-line
-		display: block
-		text-align: right
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position
-		margin-right: 0
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: flex-end
-		align-items: center
-		text-align: left
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_describe
-		position: static
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_describe .__line
-		display: none
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position
-		margin-right: 0
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		justify-content: flex-end
-		align-items: center
-		text-align: left
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position .about-us-page_team_people_position_describe
-		position: static
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position .about-us-page_team_people_position_describe .__line
-		display: none
-	.about-us-page_team_people-container-second-line
-		margin-top: 0
-		flex-wrap: wrap
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_describe .__line
-		display: none
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_describe
-		position: static
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child
-		margin-right: 0
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:nth-child(2) .about-us-page_team_people_position_describe
-		position: static
-		.__line
-			display: none
+		font-size: 16px
+	.about-us-page_team_people_position_content 
+		padding-top: 40px
+	.about-us-page_team_people_position_content .__info .__name
+		font-size: 15px
+	.about-us-page_team_people_position_content .__info .__class
+		font-size: 14px
 	.about-us-page_work
 		padding-top: 0
 	.about-us-page_work_title .__title
 		font-size: 38px
 	.home-page_start_scroll-btn
 		display: none
+	.about-us-page_work_table table tr td
+		font-size: 16px
+	.about-us-page_work_describe .__content
+		font-size: 16px
+		padding-right: 40px
+		padding-left: 40px
 @media screen and (max-width: 768px)
 	.wrapper
 		padding: 0
@@ -1084,6 +1024,9 @@
 				margin: 0 auto
 	.about-us-page-start
 		padding-top: 30px
+	.about-us-page-start_container
+		padding-right: 10px
+		padding-left: 10px
 	.about-us-page-start_title > .__title
 		font-size: 32px
 		line-height: 1.34
@@ -1097,6 +1040,20 @@
 		text-align: center
 	.about-us-page-start_title > .__title:after
 		width: 100px
+		margin: 30px auto 0
+	.about-us-page-start_value_content > .__title
+		font-size: 28px
+	.about-us-page-start_value_content.__title
+		padding-right: 0
+		flex-direction: column-reverse
+		flex-wrap: wrap
+		justify-content: center
+		img
+			margin-right: auto
+			margin-left: auto
+			margin-bottom: 20px
+	.about-us-page-start_value_content.__text
+		flex-wrap: wrap
 	.about-us-page-start_value_content_text
 		flex-wrap: wrap
 	.about-us-page-start_value_content_text .__text:first-child
@@ -1106,58 +1063,24 @@
 		margin-top: 0
 	.about-us-page_team_title > .__describe
 		line-height: 1.24
-		font-size: 18px
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_describe .__link
-		display: block
-		max-width: 41px
-		margin: 0 auto 10px 0
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_img
-		max-width: 130px
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_describe .__name
-		font-size: 20px
-		margin-left: 0
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position .about-us-page_team_people_position_describe .__position
-		margin-left: 0
-		font-size: 14px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_describe .__link
-		display: block
-		max-width: 41px
-		margin: 0 auto 10px 0
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_img
-		max-width: 130px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_describe .__name
-		font-size: 20px
-		margin-left: 0
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child .about-us-page_team_people_position_describe .__position
-		margin-left: 0
-		font-size: 14px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:nth-child(2) .about-us-page_team_people_position_describe .__link
-		display: block
-		max-width: 41px
-		margin: 0 auto 10px 0
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:first-child
+		font-size: 16px
+	.about-us-page_team_people
+		flex-wrap: wrap
+		justify-content: center
+	.about-us-page_team_people_position
+		margin-right: 0
 		margin-bottom: 30px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position
-		margin-bottom: 30px
-	.about-us-page_team_people-container-first-line .about-us-page_team_people_position
-		margin-bottom: 30px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:nth-child(2) .about-us-page_team_people_position_img
-		max-width: 130px
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:nth-child(2) .about-us-page_team_people_position_describe .__name
-		font-size: 20px
-		margin-left: 0
-	.about-us-page_team_people-container-second-line .about-us-page_team_people_position:nth-child(2) .about-us-page_team_people_position_describe .__position
-		margin-left: 0
-		font-size: 14px
 	.about-us-page_work_title .__title
 		margin-top: 0
 		font-size: 24px
 	.about-us-page_work_title .__content
-		font-size: 18px
+		font-size: 16px
 		margin-bottom: 10px
 	.about-us-page_work_table table tr td:nth-child(2)
-		padding: 5px 20px 5px 0
+		padding: 5px 5px 5px 0
 		font-size: 16px
+	.about-us-page_work_table table tr td:first-child
+		padding-right: 20px
 	.about-us-page_work_table table
 		width: 100%
 	.about-us-page_work_table
@@ -1165,7 +1088,10 @@
 		margin-bottom: 30px
 	.about-us-page_work_describe .__content
 		line-height: 1.55
-		font-size: 18px
+		font-size: 16px
+		padding: 0
+	.page-development_button
+		margin-bottom: 40px
 	.about-us-page_work_describe
 		margin-bottom: 40px
 	.case-template

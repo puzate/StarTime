@@ -23,7 +23,7 @@ $(document).ready(function() {
 			top = $(id).offset().top;
 				$('body,html').animate({scrollTop: top}, 1500);
 	});
-$('body, html').scroll(function(){ return false; }); // allow no scrolling
+	$('body, html').scroll(function(){ return false; }); // allow no scrolling
 	$('.header_menu_button .__btn').click(function() {
 		// $($(this)).toggleClass('open');
 		$('.header_menu_button .__btn:before, .header_menu_button .__btn:after').click(function() {
@@ -180,8 +180,16 @@ $('body, html').scroll(function(){ return false; }); // allow no scrolling
 			$('.footer-container_logo img').attr('srcset','img/top-logo@2x.png 2x, img/top-logo@3x.png 3x');
 		};
 	};
-	if ($('.wrapper').hasClass('about-us main')) {
+	if ($('.wrapper').hasClass('about-us') || $('.wrapper').hasClass('main')) {
 		$('.footer-container_logo img').attr({
+			src: 'img/logo-white.png',
+			srcset:'img/logo-white@2x.png 2x, img/logo-white@3x.png 3x'
+		});
+		$('.header_menu_container_img a img').attr({
+			src: 'img/logo-white.png',
+			srcset:'img/logo-white@2x.png 2x, img/logo-white@3x.png 3x'
+		});
+		$('.header_main_logo a img').attr({
 			src: 'img/logo-white.png',
 			srcset:'img/logo-white@2x.png 2x, img/logo-white@3x.png 3x'
 		});
@@ -218,8 +226,13 @@ $(function() {
 			scrollTop: $($(this)).offset().top
 		}, 800);
 	});
-	$('.page-development_content_pos_list li .__btn').click(function() {
-		$(this).parent().toggleClass('open')
+	$('.page-development_content_pos_list li').addClass('close')
+	$('.page-development_content_pos_list li.close .__btn').click(function() {
+		$('.page-development_content_pos_list li.close').removeClass('open')
+		$(this).parent().toggleClass('open').removeClass('close')
+	});
+	$('.page-development_content_pos_list li.open .__btn').click(function() {
+		$(this).removeClass('open').addClass('close')
 	});
 	$('.contacts-page-start_check_input-container .__input-radio').click(function() {
 		$('.contacts-page_feedback-from').addClass('open');
@@ -270,6 +283,6 @@ $(window).scroll(function () {
 		$('.header_menu_button, .header_soc_list, .header_lang_list').addClass('animated').removeAttr('style')
 	};
 	$('.about-us-page_team_people').waypoint(function() {
-		$('.about-us-page_team_people-container-first-line, .about-us-page_team_people-container-second-line').addClass('__open')
-	});
+		$('.about-us-page_team_people_position_content').addClass('__open')
+	}, 1500);
 });
