@@ -290,7 +290,7 @@ header
 	position: fixed
 	bottom: 100px
 	right: -5vw
-	z-index: 4
+	z-index: 5
 	transform: rotate(270deg)
 .header_lang_list
 	margin: 0
@@ -421,6 +421,7 @@ header
 	padding-top: 170px
 	max-height: 100vh
 	height: 100vh
+	overflow: hidden
 .home-page_start_container
 	max-width: 1200px
 	margin: 0 auto
@@ -480,7 +481,6 @@ header
 	left: 0
 	right: 0
 	z-index: 1
-	overflow: hidden
 	max-height: 100%
 	object-fit: cover
 	display: -webkit-flex
@@ -888,7 +888,7 @@ footer
 		legend
 			margin-bottom: 80px
 			font-size: 44px
-			line-height: 0.61
+			line-height: 1.1
 			color: $warm-blue
 .contacts-page-start_check_input-container
 	display: inline-block
@@ -924,7 +924,7 @@ footer
 	display: -o-flex
 	display: flex
 	align-items: center
-	margin-bottom: 250px
+	margin-bottom: 50px
 .contacts-page-start_info_address
 	margin-left: 100px
 	address
@@ -967,15 +967,16 @@ footer
 	position: fixed
 	top: 0
 	bottom: 0
-	left: 200vw
+	left: 0
 	right: 0
 	width: 100%
 	height: 100vh
 	z-index: 100000
-	transition: 0.4s ease all
+	transition: 1.5s ease all
 	overflow-y: scroll
+	transform: translateX(200vw)
 	&.open
-		left: 0
+		transform: translateX(0)
 .contacts-page_feedback-from_container
 	max-width: 800px
 	margin: 0 auto
@@ -1062,17 +1063,20 @@ footer
 	transition: 0.5s ease all
 	position: relative
 	z-index: -1
+	max-height: 0
+	margin: 0 auto
 	&.open
 		opacity: 1
 		z-index: 1
 		margin-top: 100px
+		max-height: 1000px
 .contacts-page_thnx_container
 	max-width: 1200px
 	margin: 0 auto
 .contacts-page_thnx_title
 	>.__title
 		color: $gunmetal
-		line-height: 0.59
+		line-height: 1.1
 		font-size: 33px
 		font-family: $m-black
 		margin: 0 0 42px
@@ -1430,8 +1434,8 @@ footer
 	display: -ms-flex
 	display: -o-flex
 	display: flex
-	padding-left: 10px
-	padding-right: 10px
+	padding-left: 15px
+	padding-right: 15px
 	overflow: hidden
 	justify-content: space-between
 .blog-page_starts_position_image-down,
@@ -1451,18 +1455,40 @@ footer
 		color: $charcoal-grey
 		font-size: 28px
 		line-height: 1.29
-		background-color: $pale-grey
+		// background-color: $pale-grey
 		font-family: $m-bold
 		transition: 0.3s ease all
 		margin-top: 0
 		align-self: flex-start
+		position: relative
+		z-index: 3
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 0
+			height: 3px
+			background-color: $charcoal-grey
+			display: block
+			transition: 0.6s ease all
+		&:before
+			content: ''
+			background-color: $pale-grey
+			position: absolute
+			top: 10px
+			height: 100%
+			right: 0
+			z-index: -1
+			left: 0
 	img
 		bottom: 0
 		left: 0
 		right: 0
 		position: absolute
 		display: block
-		z-index: -1
+		object-fit: fill
+		z-index: -2
 	.__link
 		display: -webkit-flex
 		display: -moz-flex
@@ -1475,6 +1501,9 @@ footer
 			.__content
 				order: 1
 				align-self: flex-end
+				&:before
+					top: auto
+					bottom: 0
 			img
 				bottom: auto
 				top: 0
@@ -1539,34 +1568,60 @@ footer
 			line-height: 1.33
 			font-family: $m-bold
 			transition: 0.3s ease all
+			display: inline-block
+			position: relative
+			&:after
+				content: ''
+				background-color: $gunmetal
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 0
+				height: 3px
+				transition: 0.6s linear all
+				display: block
 	.__info
 		color: #818594
 		font-size: 14px
 		margin: 0 0 10px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: flex-start
+		padding-top: 8px
 		.__date
 			max-width: 150px
-			padding-left: 30px
+			text-transform: uppercase
 			display: inline-block
 			position: relative
-			&:before
-				content: '\e902'
-				font-family: 'icomoon'
-				position: absolute
-				top: 2px
-				left: 5px
-				font-size: 20px
+			font-size: 14px
+			margin-right: 24px
+			margin-top: 2px
+			span
+				vertical-align: top
+				// padding-top: 2px
+				display: inline-block
+			svg
+				margin-right: 12px
+				path,
+				g
+					fill: #a1a4b4
 		.__views
 			display: inline-block
 			vertical-align: top
-			padding-left: 30px
 			position: relative
-			&:before
-				content: '\e903'
-				font-family: 'icomoon'
-				position: absolute
-				top: 2px
-				left: 5px
-				font-size: 20px
+			color: #818594
+			letter-spacing: 0.5px
+			font-size: 14px
+			span
+				vertical-align: top
+				padding-top: 2px
+				display: inline-block
+			svg
+				margin-right: 12px
+				fill: #a1a4b4
 	.__content
 		line-height: 1.38
 		margin: 0
@@ -1969,7 +2024,8 @@ footer
 	position: relative
 	z-index: 4
 	overflow: visible
-	.article-page_add-comment_form
+	.article-page_add-comment_form,
+	.article-page_follow-us_form
 		height: 0
 		transition: 0.5s ease all
 		padding: 0
@@ -1978,7 +2034,8 @@ footer
 			height: 700px
 			padding-top: 180px
 			padding-bottom: 100px
-			.article-page_add-comment_form
+			.article-page_add-comment_form,
+			.article-page_follow-us_form
 				padding-top: 180px
 				padding-bottom: 100px
 				height: auto
@@ -2009,10 +2066,13 @@ footer
 	.__follow-us
 		margin-right: 0
 		margin-left: 84px
-.article-page_add-comment_form
+.article-page_add-comment_form,
+.article-page_follow-us_form
 	background-color: #d5d7de
 	padding-top: 180px
 	padding-bottom: 100px
+	position: relative
+	z-index: -1
 	form
 		max-width: 730px
 		margin: 0 auto
@@ -2072,6 +2132,8 @@ footer
 					padding: 10px 0 10px 0
 					padding-left: 24px
 					background: rgba(0,0,0,0)
+.article-page_follow-us_form
+	max-height: 410px
 // PAGE ARTICLE ENDS
 // CASES PAGE STARTS
 .cases-page
@@ -2779,7 +2841,7 @@ footer
 		width: 134px
 		height: 650px
 		opacity: 0.57
-		z-index: -1
+		z-index: 1
 		mix-blend-mode: multiply
 		-webkit-filter: blur(40px)
 		filter: blur(40px)
@@ -2891,7 +2953,7 @@ footer
 				height: 2px
 				background-color: $gunmetal
 				display: block
-				transition: 0.4s linear all
+				transition: 0.6s linear all
 		.__describe
 			font-size: 16px
 			line-height: 1.75
@@ -2924,7 +2986,7 @@ footer
 					height: 2px
 					background-color: $gunmetal
 					display: block
-					transition: 0.4s ease all
+					transition: 0.6s ease all
 			.__title
 				color: $gunmetal
 				max-width: 70%
@@ -2982,19 +3044,21 @@ footer
 							background-color: $gunmetal
 							width: 0
 							height: 2px
-							transition: 0.4s ease all
+							transition: 0.6s ease all
 					&:before
 						content: ''
 						position: absolute
-						left: 20px
+						left: 15px
 						top: 50%
 						transform: translateY(-50%)
-						width: 4px
-						height: 4px
+						width: 10px
+						height: 1px
 						background-color: $gunmetal
-						border-radius: 50%
 		&.open
 			color: $gunmetal
+			background: rgba(33, 113, 243, 0.1);
+			-webkit-box-shadow: 0 2px 7px 0 hsla(0,0%,4%,.05), 3px 27px 54px -34px rgba(0,0,0,.47);
+			box-shadow: 0 2px 7px 0 hsla(0,0%,4%,.05), 3px 27px 54px -34px rgba(0,0,0,.47);
 			&:before
 				animation: 0.5s linear page-dev-before-open
 				animation-fill-mode: forwards

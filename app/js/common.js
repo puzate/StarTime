@@ -160,6 +160,11 @@ $(document).ready(function() {
 	// });
 	$('.article-page_add-comment_title .__add-comment').click(function() {
 		$('.article-page_add-comment_form').toggleClass('open')
+		$('.article-page_follow-us_form').removeClass('open');
+	});
+	$('.article-page_add-comment_title .__follow-us').click(function() {
+		$('.article-page_follow-us_form').toggleClass('open');
+		$('.article-page_add-comment_form').removeClass('open')
 	});
 	if ($('.wrapper').hasClass('about-us')) {
 		$('.header_menu_container_img a img').attr('src','img/logo-white.png');
@@ -194,6 +199,14 @@ $(document).ready(function() {
 			srcset:'img/logo-white@2x.png 2x, img/logo-white@3x.png 3x'
 		});
 	};
+	if ($(window).width() < 768) {
+		if ($('.wrapper').hasClass('articles-page')) {
+			$('.footer-container_logo img').attr({
+				src: 'img/top-logo.png',
+				srcset:'img/top-logo@2x.png 2x, img/top-logo@3x.png 3x'
+			});
+		}
+	};
 });
 $(function() {
 	var $el, leftPos, newWidth;
@@ -226,24 +239,23 @@ $(function() {
 			scrollTop: $($(this)).offset().top
 		}, 800);
 	});
-	$('.page-development_content_pos_list li').addClass('close')
-	$('.page-development_content_pos_list li.close .__btn').click(function() {
-		$('.page-development_content_pos_list li.close').removeClass('open')
-		$(this).parent().toggleClass('open').removeClass('close')
-	});
-	$('.page-development_content_pos_list li.open .__btn').click(function() {
-		$(this).removeClass('open').addClass('close')
+	$('.page-development_content_pos_list li .__btn').click(function() {
+		if ($(this).parent().hasClass('open')) {
+			$(this).parent().removeClass('open')
+		} else {
+			$('.page-development_content_pos_list li').removeClass('open');
+			$(this).parent().addClass('open')
+		}
 	});
 	$('.contacts-page-start_check_input-container .__input-radio').click(function() {
 		$('.contacts-page_feedback-from').addClass('open');
-		$('body').css({'overflow': 'hidden'})
+		$('body').css({'overflow': 'hidden', 'margin-right': '15px'})
 	});
 	$('.contacts-page_feedback-from_container .__btn-close').click(function() {
 		$('.contacts-page_feedback-from').removeClass('open');
 		$('body').removeAttr( 'style' );
 	});
 });
-
 (function($) {
 $(function() {
 
